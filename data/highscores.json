@@ -1,21 +1,21 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-06T23:50:26.820Z",
+  "capturedAt": "2026-11-06T23:55:29.620Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey554total level"
+        "text": "🥇KorBlimey556total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100386total level"
+        "text": "🥈3for100389total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509297total level"
+        "text": "🥉Pathell3509298total level"
       },
       {
         "rank": 4,
@@ -35,11 +35,11 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer70total level"
+        "text": "8Iamdatrainer71total level"
       },
       {
         "rank": 9,
-        "text": "9Cerial66total level"
+        "text": "9Cerial67total level"
       },
       {
         "rank": 10,
@@ -53,11 +53,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey2,022slain"
+        "text": "🥈KorBlimey2,026slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100715slain"
+        "text": "🥉3for100733slain"
       },
       {
         "rank": 4,
@@ -154,7 +154,7 @@
       },
       {
         "rank": 6,
-        "text": "6ThomasbLevel 5770 xp"
+        "text": "6ThomasbLevel 5810 xp"
       },
       {
         "rank": 7,
@@ -176,7 +176,7 @@
     "skill:Mining": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 67178,179 xp"
+        "text": "🥇KorBlimeyLevel 68180,389 xp"
       },
       {
         "rank": 2,
@@ -184,7 +184,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 2320,595 xp"
+        "text": "🥉Pathell3509Level 2422,285 xp"
       },
       {
         "rank": 4,
@@ -348,11 +348,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈IamdatrainerLevel 169,354 xp"
+        "text": "🥈IamdatrainerLevel 1710,746 xp"
       },
       {
         "rank": 3,
-        "text": "🥉CerialLevel 114,396 xp"
+        "text": "🥉CerialLevel 125,416 xp"
       },
       {
         "rank": 4,
@@ -466,11 +466,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3856,625 xp"
+        "text": "🥇KorBlimeyLevel 3957,785 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 2727,877 xp"
+        "text": "🥈3for100Level 2932,141 xp"
       },
       {
         "rank": 3,
@@ -751,6 +751,10 @@
       {
         "rank": 4,
         "text": "4ZombieLevel 130 xp"
+      },
+      {
+        "rank": 5,
+        "text": "5ThomasbLevel 115 xp"
       }
     ],
     "skill:Apothecary": [
@@ -825,7 +829,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 71,906 xp"
+        "text": "🥉3for100Level 82,060 xp"
       },
       {
         "rank": 4,
@@ -910,7 +914,7 @@
     "skill:Beekeeping": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3232 xp"
+        "text": "🥇KorBlimeyLevel 3254 xp"
       },
       {
         "rank": 2,
@@ -922,7 +926,7 @@
     "skill:Tailoring": [
       {
         "rank": 1,
-        "text": "🥇ThomasbLevel 82,238 xp"
+        "text": "🥇ThomasbLevel 82,546 xp"
       },
       {
         "rank": 2,
