@@ -1,21 +1,21 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-06T23:41:13.953Z",
+  "capturedAt": "2026-11-06T23:45:26.052Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey549total level"
+        "text": "🥇KorBlimey552total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100379total level"
+        "text": "🥈3for100382total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509295total level"
+        "text": "🥉Pathell3509296total level"
       },
       {
         "rank": 4,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb176total level"
+        "text": "5Thomasb177total level"
       },
       {
         "rank": 6,
@@ -35,7 +35,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer68total level"
+        "text": "8Iamdatrainer69total level"
       },
       {
         "rank": 9,
@@ -53,11 +53,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey1,988slain"
+        "text": "🥈KorBlimey2,008slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100700slain"
+        "text": "🥉3for100707slain"
       },
       {
         "rank": 4,
@@ -146,11 +146,11 @@
       },
       {
         "rank": 4,
-        "text": "4VexLevel 71,510 xp"
+        "text": "4Pathell3509Level 71,915 xp"
       },
       {
         "rank": 5,
-        "text": "5Pathell3509Level 61,240 xp"
+        "text": "5VexLevel 71,510 xp"
       },
       {
         "rank": 6,
@@ -348,11 +348,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈IamdatrainerLevel 146,960 xp"
+        "text": "🥈IamdatrainerLevel 157,980 xp"
       },
       {
         "rank": 3,
-        "text": "🥉CerialLevel 103,256 xp"
+        "text": "🥉CerialLevel 103,346 xp"
       },
       {
         "rank": 4,
@@ -386,7 +386,7 @@
     "skill:Attack": [
       {
         "rank": 1,
-        "text": "🥇3for100Level 3035,634 xp"
+        "text": "🥇3for100Level 3035,901 xp"
       },
       {
         "rank": 2,
@@ -466,11 +466,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3444,589 xp"
+        "text": "🥇KorBlimeyLevel 3650,557 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 2625,091 xp"
+        "text": "🥈3for100Level 2626,862 xp"
       },
       {
         "rank": 3,
@@ -538,7 +538,7 @@
       },
       {
         "rank": 4,
-        "text": "43for100Level 93,116 xp"
+        "text": "43for100Level 103,356 xp"
       },
       {
         "rank": 5,
@@ -618,7 +618,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 2321,008 xp"
+        "text": "🥉3for100Level 2421,248 xp"
       },
       {
         "rank": 4,
@@ -778,7 +778,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 4583 xp"
+        "text": "🥉3for100Level 5938 xp"
       },
       {
         "rank": 4,
@@ -821,11 +821,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 2015,915 xp"
+        "text": "🥈KorBlimeyLevel 2116,519 xp"
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 71,730 xp"
+        "text": "🥉3for100Level 71,825 xp"
       },
       {
         "rank": 4,
@@ -922,7 +922,7 @@
     "skill:Tailoring": [
       {
         "rank": 1,
-        "text": "🥇ThomasbLevel 61,358 xp"
+        "text": "🥇ThomasbLevel 71,754 xp"
       },
       {
         "rank": 2,
