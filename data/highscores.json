@@ -1,969 +1,948 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-06T23:18:20.094Z",
+  "capturedAt": "2026-11-06T23:28:39.347Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey 542 total level"
+        "text": "🥇KorBlimey545total level"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 371 total level"
+        "text": "🥈3for100374total level"
       },
       {
         "rank": 3,
-        "text": "🥉 Pathell3509 289 total level"
+        "text": "🥉Pathell3509290total level"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype 183 total level"
+        "text": "4infamoushype183total level"
       },
       {
         "rank": 5,
-        "text": "5 Thomasb 169 total level"
+        "text": "5Thomasb171total level"
       },
       {
         "rank": 6,
-        "text": "6 Vex 111 total level"
+        "text": "6Vex111total level"
       },
       {
         "rank": 7,
-        "text": "7 Dead2master 79 total level"
+        "text": "7Dead2master79total level"
       },
       {
         "rank": 8,
-        "text": "8 Iamdatrainer 63 total level"
+        "text": "8Iamdatrainer65total level"
       },
       {
         "rank": 9,
-        "text": "9 Cerial 62 total level"
+        "text": "9Cerial62total level"
       },
       {
         "rank": 10,
-        "text": "10 Zombie 62 total level"
+        "text": "10Zombie62total level"
       }
     ],
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇 Pathell3509 5,478 slain"
+        "text": "🥇Pathell35095,478slain"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey 1,968 slain"
+        "text": "🥈KorBlimey1,968slain"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 682 slain"
+        "text": "🥉3for100689slain"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb 461 slain"
+        "text": "4Thomasb461slain"
       },
       {
         "rank": 5,
-        "text": "5 infamoushype 439 slain"
+        "text": "5infamoushype439slain"
       },
       {
         "rank": 6,
-        "text": "6 Vex 177 slain"
+        "text": "6Vex177slain"
       },
       {
         "rank": 7,
-        "text": "7 Dead2master 57 slain"
+        "text": "7Dead2master57slain"
       },
       {
         "rank": 8,
-        "text": "8 Cerial 12 slain"
+        "text": "8Cerial12slain"
       },
       {
         "rank": 9,
-        "text": "9 Six 9 slain"
+        "text": "9Six9slain"
       },
       {
         "rank": 10,
-        "text": "10 Zombie 8 slain"
+        "text": "10Zombie8slain"
       }
     ],
-    "Bosses": [
-      {
-        "rank": 1,
-        "text": "Nobody yet. It could be you!"
-      }
-    ],
+    "Bosses": [],
     "Quests": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey 8 quests"
+        "text": "🥇KorBlimey8quests"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 8 quests"
+        "text": "🥈3for1008quests"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb 8 quests"
+        "text": "🥉Thomasb8quests"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype 7 quests"
+        "text": "4infamoushype7quests"
       },
       {
         "rank": 5,
-        "text": "5 Zombie 7 quests"
+        "text": "5Zombie7quests"
       },
       {
         "rank": 6,
-        "text": "6 Pathell3509 6 quests"
+        "text": "6Pathell35096quests"
       },
       {
         "rank": 7,
-        "text": "7 Iamdatrainer 5 quests"
+        "text": "7Iamdatrainer5quests"
       },
       {
         "rank": 8,
-        "text": "8 Cerial 5 quests"
+        "text": "8Cerial5quests"
       },
       {
         "rank": 9,
-        "text": "9 Dead2master 3 quests"
+        "text": "9Dead2master3quests"
       },
       {
         "rank": 10,
-        "text": "10 Odin 2 quests"
+        "text": "10Odin2quests"
       }
     ],
     "skill:Lumbering": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 12 5,032 xp"
+        "text": "🥇KorBlimeyLevel 125,032 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 11 4,689 xp"
+        "text": "🥈3for100Level 114,689 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 infamoushype Level 9 2,935 xp"
+        "text": "🥉infamoushypeLevel 92,935 xp"
       },
       {
         "rank": 4,
-        "text": "4 Vex Level 7 1,510 xp"
+        "text": "4VexLevel 71,510 xp"
       },
       {
         "rank": 5,
-        "text": "5 Pathell3509 Level 5 790 xp"
+        "text": "5Pathell3509Level 5790 xp"
       },
       {
         "rank": 6,
-        "text": "6 Thomasb Level 5 770 xp"
+        "text": "6ThomasbLevel 5770 xp"
       },
       {
         "rank": 7,
-        "text": "7 Zombie Level 3 270 xp"
+        "text": "7ZombieLevel 3270 xp"
       },
       {
         "rank": 8,
-        "text": "8 ChivalryKnight Level 3 200 xp"
+        "text": "8ChivalryKnightLevel 3200 xp"
       },
       {
         "rank": 9,
-        "text": "9 Iamdatrainer Level 3 170 xp"
+        "text": "9IamdatrainerLevel 3170 xp"
       },
       {
         "rank": 10,
-        "text": "10 Dead2master Level 2 150 xp"
+        "text": "10Dead2masterLevel 2150 xp"
       }
     ],
     "skill:Mining": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 67 178,179 xp"
+        "text": "🥇KorBlimeyLevel 67178,179 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 infamoushype Level 32 38,681 xp"
+        "text": "🥈infamoushypeLevel 3238,681 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Pathell3509 Level 21 16,695 xp"
+        "text": "🥉Pathell3509Level 2116,695 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 17 10,320 xp"
+        "text": "4ThomasbLevel 1710,320 xp"
       },
       {
         "rank": 5,
-        "text": "5 3for100 Level 15 8,378 xp"
+        "text": "53for100Level 158,378 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 12 5,068 xp"
+        "text": "6VexLevel 125,068 xp"
       },
       {
         "rank": 7,
-        "text": "7 Dead2master Level 7 1,512 xp"
+        "text": "7Dead2masterLevel 71,512 xp"
       },
       {
         "rank": 8,
-        "text": "8 Cerial Level 5 640 xp"
+        "text": "8CerialLevel 5640 xp"
       },
       {
         "rank": 9,
-        "text": "9 Zombie Level 4 540 xp"
+        "text": "9ZombieLevel 4540 xp"
       },
       {
         "rank": 10,
-        "text": "10 Iamdatrainer Level 3 336 xp"
+        "text": "10IamdatrainerLevel 3336 xp"
       }
     ],
     "skill:Fishing": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 74 217,811 xp"
+        "text": "🥇KorBlimeyLevel 74217,811 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 63 153,952 xp"
+        "text": "🥈3for100Level 63153,952 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Pathell3509 Level 33 41,374 xp"
+        "text": "🥉Pathell3509Level 3341,374 xp"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype Level 17 10,250 xp"
+        "text": "4infamoushypeLevel 1710,250 xp"
       },
       {
         "rank": 5,
-        "text": "5 Dead2master Level 6 1,208 xp"
+        "text": "5Dead2masterLevel 61,208 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 6 1,116 xp"
+        "text": "6VexLevel 61,116 xp"
       },
       {
         "rank": 7,
-        "text": "7 Thomasb Level 6 1,078 xp"
+        "text": "7ThomasbLevel 61,078 xp"
       },
       {
         "rank": 8,
-        "text": "8 Zombie Level 4 586 xp"
+        "text": "8ZombieLevel 4586 xp"
       },
       {
         "rank": 9,
-        "text": "9 Iamdatrainer Level 4 402 xp"
+        "text": "9IamdatrainerLevel 4402 xp"
       },
       {
         "rank": 10,
-        "text": "10 ChivalryKnight Level 4 392 xp"
+        "text": "10ChivalryKnightLevel 4392 xp"
       }
     ],
     "skill:Cooking": [
       {
         "rank": 1,
-        "text": "🥇 3for100 Level 45 79,958 xp"
+        "text": "🥇3for100Level 4682,268 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 37 54,737 xp"
+        "text": "🥈KorBlimeyLevel 3754,737 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 infamoushype Level 16 9,744 xp"
+        "text": "🥉infamoushypeLevel 169,744 xp"
       },
       {
         "rank": 4,
-        "text": "4 Pathell3509 Level 7 1,623 xp"
+        "text": "4Pathell3509Level 71,623 xp"
       },
       {
         "rank": 5,
-        "text": "5 Dead2master Level 5 956 xp"
+        "text": "5Dead2masterLevel 5956 xp"
       },
       {
         "rank": 6,
-        "text": "6 Thomasb Level 4 627 xp"
+        "text": "6ThomasbLevel 4627 xp"
       },
       {
         "rank": 7,
-        "text": "7 Vex Level 4 564 xp"
+        "text": "7VexLevel 4564 xp"
       },
       {
         "rank": 8,
-        "text": "8 Zombie Level 4 552 xp"
+        "text": "8ZombieLevel 4552 xp"
       },
       {
         "rank": 9,
-        "text": "9 ChivalryKnight Level 3 357 xp"
+        "text": "9ChivalryKnightLevel 3357 xp"
       },
       {
         "rank": 10,
-        "text": "10 Iamdatrainer Level 3 258 xp"
+        "text": "10IamdatrainerLevel 3258 xp"
       }
     ],
     "skill:Smithing": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 55 117,027 xp"
+        "text": "🥇KorBlimeyLevel 55117,027 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 29 32,613 xp"
+        "text": "🥈3for100Level 2932,613 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 infamoushype Level 18 12,138 xp"
+        "text": "🥉infamoushypeLevel 1812,138 xp"
       },
       {
         "rank": 4,
-        "text": "4 Vex Level 12 5,530 xp"
+        "text": "4VexLevel 125,530 xp"
       },
       {
         "rank": 5,
-        "text": "5 Thomasb Level 10 3,730 xp"
+        "text": "5ThomasbLevel 103,730 xp"
       },
       {
         "rank": 6,
-        "text": "6 Pathell3509 Level 6 1,296 xp"
+        "text": "6Pathell3509Level 61,296 xp"
       },
       {
         "rank": 7,
-        "text": "7 Dead2master Level 4 528 xp"
+        "text": "7Dead2masterLevel 4528 xp"
       },
       {
         "rank": 8,
-        "text": "8 Zombie Level 3 272 xp"
+        "text": "8ZombieLevel 3272 xp"
       },
       {
         "rank": 9,
-        "text": "9 PrayingMantis Level 3 180 xp"
+        "text": "9PrayingMantisLevel 3180 xp"
       },
       {
         "rank": 10,
-        "text": "10 Odin Level 3 176 xp"
+        "text": "10OdinLevel 3176 xp"
       }
     ],
     "skill:Pilfering": [
       {
         "rank": 1,
-        "text": "🥇 Pathell3509 Level 22 19,216 xp"
+        "text": "🥇Pathell3509Level 2219,216 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Iamdatrainer Level 9 2,640 xp"
+        "text": "🥈IamdatrainerLevel 114,440 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Cerial Level 7 1,800 xp"
+        "text": "🥉CerialLevel 71,928 xp"
       },
       {
         "rank": 4,
-        "text": "4 Vex Level 6 1,088 xp"
+        "text": "4ThomasbLevel 71,592 xp"
       },
       {
         "rank": 5,
-        "text": "5 KorBlimey Level 6 1,020 xp"
+        "text": "5VexLevel 61,088 xp"
       },
       {
         "rank": 6,
-        "text": "6 3for100 Level 5 888 xp"
+        "text": "6KorBlimeyLevel 61,020 xp"
       },
       {
         "rank": 7,
-        "text": "7 IronJuggalos Level 5 800 xp"
+        "text": "73for100Level 5888 xp"
       },
       {
         "rank": 8,
-        "text": "8 Thomasb Level 5 792 xp"
+        "text": "8IronJuggalosLevel 5800 xp"
       },
       {
         "rank": 9,
-        "text": "9 Dead2master Level 3 344 xp"
+        "text": "9Dead2masterLevel 3344 xp"
       },
       {
         "rank": 10,
-        "text": "10 Pants Level 2 88 xp"
+        "text": "10PantsLevel 288 xp"
       }
     ],
     "skill:Attack": [
       {
         "rank": 1,
-        "text": "🥇 3for100 Level 30 35,634 xp"
+        "text": "🥇3for100Level 3035,634 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 30 34,771 xp"
+        "text": "🥈KorBlimeyLevel 3034,771 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 15 8,375 xp"
+        "text": "🥉ThomasbLevel 158,375 xp"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype Level 15 8,352 xp"
+        "text": "4infamoushypeLevel 158,352 xp"
       },
       {
         "rank": 5,
-        "text": "5 Pathell3509 Level 6 1,351 xp"
+        "text": "5Pathell3509Level 61,351 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 5 670 xp"
+        "text": "6VexLevel 5670 xp"
       },
       {
         "rank": 7,
-        "text": "7 Cerial Level 4 518 xp"
+        "text": "7CerialLevel 4518 xp"
       },
       {
         "rank": 8,
-        "text": "8 Six Level 4 436 xp"
+        "text": "8SixLevel 4436 xp"
       },
       {
         "rank": 9,
-        "text": "9 Dead2master Level 4 400 xp"
+        "text": "9Dead2masterLevel 4400 xp"
       },
       {
         "rank": 10,
-        "text": "10 Zombie Level 4 378 xp"
+        "text": "10ZombieLevel 4378 xp"
       }
     ],
     "skill:Strength": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 30 33,729 xp"
+        "text": "🥇KorBlimeyLevel 3033,729 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 20 14,582 xp"
+        "text": "🥈3for100Level 2014,582 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 14 6,822 xp"
+        "text": "🥉ThomasbLevel 146,822 xp"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype Level 10 3,306 xp"
+        "text": "4infamoushypeLevel 103,306 xp"
       },
       {
         "rank": 5,
-        "text": "5 Pathell3509 Level 5 943 xp"
+        "text": "5Pathell3509Level 5943 xp"
       },
       {
         "rank": 6,
-        "text": "6 Dead2master Level 2 114 xp"
+        "text": "6Dead2masterLevel 2114 xp"
       },
       {
         "rank": 7,
-        "text": "7 Zombie Level 2 100 xp"
+        "text": "7ZombieLevel 2100 xp"
       },
       {
         "rank": 8,
-        "text": "8 Iamdatrainer Level 2 100 xp"
+        "text": "8IamdatrainerLevel 2100 xp"
       },
       {
         "rank": 9,
-        "text": "9 Cerial Level 2 100 xp"
+        "text": "9CerialLevel 2100 xp"
       }
     ],
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 28 30,041 xp"
+        "text": "🥇KorBlimeyLevel 3033,677 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 23 20,960 xp"
+        "text": "🥈3for100Level 2421,623 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Pathell3509 Level 17 10,682 xp"
+        "text": "🥉Pathell3509Level 1711,343 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 15 8,209 xp"
+        "text": "4ThomasbLevel 158,209 xp"
       },
       {
         "rank": 5,
-        "text": "5 infamoushype Level 15 7,844 xp"
+        "text": "5infamoushypeLevel 157,844 xp"
       },
       {
         "rank": 6,
-        "text": "6 Dead2master Level 6 1,340 xp"
+        "text": "6Dead2masterLevel 61,340 xp"
       },
       {
         "rank": 7,
-        "text": "7 Vex Level 5 659 xp"
+        "text": "7VexLevel 5659 xp"
       },
       {
         "rank": 8,
-        "text": "8 Zombie Level 2 100 xp"
+        "text": "8ZombieLevel 2100 xp"
       },
       {
         "rank": 9,
-        "text": "9 Iamdatrainer Level 2 100 xp"
+        "text": "9IamdatrainerLevel 2100 xp"
       },
       {
         "rank": 10,
-        "text": "10 Cerial Level 2 100 xp"
+        "text": "10CerialLevel 2100 xp"
       }
     ],
     "skill:Ranged": [
       {
         "rank": 1,
-        "text": "🥇 Pathell3509 Level 67 174,672 xp"
+        "text": "🥇Pathell3509Level 68180,125 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 19 13,592 xp"
+        "text": "🥈KorBlimeyLevel 1913,592 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 10 3,781 xp"
+        "text": "🥉3for100Level 103,781 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 9 2,840 xp"
+        "text": "4ThomasbLevel 92,840 xp"
       }
     ],
     "skill:Magic": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 30 34,865 xp"
+        "text": "🥇KorBlimeyLevel 3034,865 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Vex Level 17 11,291 xp"
+        "text": "🥈VexLevel 1711,291 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 10 3,440 xp"
+        "text": "🥉ThomasbLevel 103,440 xp"
       },
       {
         "rank": 4,
-        "text": "4 3for100 Level 9 2,836 xp"
+        "text": "43for100Level 93,116 xp"
       },
       {
         "rank": 5,
-        "text": "5 Pathell3509 Level 5 745 xp"
+        "text": "5Pathell3509Level 5745 xp"
       },
       {
         "rank": 6,
-        "text": "6 Dead2master Level 3 234 xp"
+        "text": "6Dead2masterLevel 3234 xp"
       },
       {
         "rank": 7,
-        "text": "7 Cerial Level 3 231 xp"
+        "text": "7CerialLevel 3231 xp"
       },
       {
         "rank": 8,
-        "text": "8 infamoushype Level 3 188 xp"
+        "text": "8infamoushypeLevel 3188 xp"
       },
       {
         "rank": 9,
-        "text": "9 Zombie Level 3 184 xp"
+        "text": "9ZombieLevel 3184 xp"
       },
       {
         "rank": 10,
-        "text": "10 Iamdatrainer Level 3 183 xp"
+        "text": "10IamdatrainerLevel 3183 xp"
       }
     ],
     "skill:Sigilcraft": [
       {
         "rank": 1,
-        "text": "🥇 Thomasb Level 6 1,085 xp"
+        "text": "🥇ThomasbLevel 61,085 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Dead2master Level 5 723 xp"
+        "text": "🥈Dead2masterLevel 5723 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 KorBlimey Level 5 710 xp"
+        "text": "🥉KorBlimeyLevel 5710 xp"
       },
       {
         "rank": 4,
-        "text": "4 3for100 Level 3 285 xp"
+        "text": "43for100Level 3285 xp"
       },
       {
         "rank": 5,
-        "text": "5 infamoushype Level 3 225 xp"
+        "text": "5infamoushypeLevel 3225 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 3 200 xp"
+        "text": "6VexLevel 3200 xp"
       },
       {
         "rank": 7,
-        "text": "7 Pathell3509 Level 3 185 xp"
+        "text": "7Pathell3509Level 3185 xp"
       },
       {
         "rank": 8,
-        "text": "8 Cerial Level 3 185 xp"
+        "text": "8CerialLevel 3185 xp"
       },
       {
         "rank": 9,
-        "text": "9 Zombie Level 3 175 xp"
+        "text": "9ZombieLevel 3175 xp"
       },
       {
         "rank": 10,
-        "text": "10 Iamdatrainer Level 3 175 xp"
+        "text": "10IamdatrainerLevel 3175 xp"
       }
     ],
     "skill:Prayer": [
       {
         "rank": 1,
-        "text": "🥇 Pathell3509 Level 32 40,538 xp"
+        "text": "🥇Pathell3509Level 3240,538 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 32 39,188 xp"
+        "text": "🥈KorBlimeyLevel 3239,188 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 23 20,728 xp"
+        "text": "🥉3for100Level 2321,008 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 10 3,560 xp"
+        "text": "4ThomasbLevel 103,560 xp"
       },
       {
         "rank": 5,
-        "text": "5 infamoushype Level 9 2,754 xp"
+        "text": "5infamoushypeLevel 92,754 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 7 1,866 xp"
+        "text": "6VexLevel 71,866 xp"
       },
       {
         "rank": 7,
-        "text": "7 Dead2master Level 4 489 xp"
+        "text": "7Dead2masterLevel 4489 xp"
       },
       {
         "rank": 8,
-        "text": "8 Six Level 3 162 xp"
+        "text": "8SixLevel 3162 xp"
       },
       {
         "rank": 9,
-        "text": "9 Zombie Level 2 126 xp"
+        "text": "9ZombieLevel 2126 xp"
       },
       {
         "rank": 10,
-        "text": "10 Iamdatrainer Level 2 78 xp"
+        "text": "10IamdatrainerLevel 278 xp"
       }
     ],
     "skill:Crafting": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 19 13,324 xp"
+        "text": "🥇KorBlimeyLevel 1913,324 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Pathell3509 Level 15 8,192 xp"
+        "text": "🥈Pathell3509Level 158,192 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 13 6,709 xp"
+        "text": "🥉3for100Level 136,709 xp"
       },
       {
         "rank": 4,
-        "text": "4 infamoushype Level 7 1,529 xp"
+        "text": "4infamoushypeLevel 71,529 xp"
       },
       {
         "rank": 5,
-        "text": "5 Zombie Level 7 1,519 xp"
+        "text": "5ZombieLevel 71,519 xp"
       },
       {
         "rank": 6,
-        "text": "6 Thomasb Level 6 1,384 xp"
+        "text": "6ThomasbLevel 61,384 xp"
       },
       {
         "rank": 7,
-        "text": "7 Cerial Level 4 417 xp"
+        "text": "7CerialLevel 4417 xp"
       },
       {
         "rank": 8,
-        "text": "8 Iamdatrainer Level 3 315 xp"
+        "text": "8IamdatrainerLevel 3315 xp"
       },
       {
         "rank": 9,
-        "text": "9 Dead2master Level 3 280 xp"
+        "text": "9Dead2masterLevel 3280 xp"
       },
       {
         "rank": 10,
-        "text": "10 Odin Level 3 220 xp"
+        "text": "10OdinLevel 3220 xp"
       }
     ],
     "skill:Bounty": [
       {
         "rank": 1,
-        "text": "🥇 3for100 Level 5 970 xp"
+        "text": "🥇3for100Level 61,054 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 5 763 xp"
+        "text": "🥈KorBlimeyLevel 5763 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Pathell3509 Level 3 186 xp"
+        "text": "🥉Pathell3509Level 3186 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 2 115 xp"
+        "text": "4ThomasbLevel 2115 xp"
       },
       {
         "rank": 5,
-        "text": "5 Dead2master Level 2 77 xp"
+        "text": "5Dead2masterLevel 277 xp"
       },
       {
         "rank": 6,
-        "text": "6 Tester Level 1 6 xp"
+        "text": "6TesterLevel 16 xp"
       }
     ],
     "skill:Bowyery": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 10 3,534 xp"
+        "text": "🥇KorBlimeyLevel 103,534 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 7 1,639 xp"
+        "text": "🥈3for100Level 71,639 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 3 250 xp"
+        "text": "🥉ThomasbLevel 3250 xp"
       }
     ],
     "skill:Kindling": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 4 388 xp"
+        "text": "🥇KorBlimeyLevel 4388 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 infamoushype Level 2 150 xp"
+        "text": "🥈infamoushypeLevel 2150 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 2 45 xp"
+        "text": "🥉3for100Level 245 xp"
       },
       {
         "rank": 4,
-        "text": "4 Zombie Level 1 30 xp"
+        "text": "4ZombieLevel 130 xp"
       }
     ],
     "skill:Apothecary": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 4 503 xp"
+        "text": "🥇KorBlimeyLevel 4503 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 4 447 xp"
+        "text": "🥈3for100Level 4447 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 3 350 xp"
+        "text": "🥉ThomasbLevel 3350 xp"
       }
     ],
     "skill:Wayfaring": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 7 1,843 xp"
+        "text": "🥇KorBlimeyLevel 71,843 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Thomasb Level 7 1,577 xp"
+        "text": "🥈ThomasbLevel 71,577 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 4 583 xp"
+        "text": "🥉3for100Level 4583 xp"
       },
       {
         "rank": 4,
-        "text": "4 Pathell3509 Level 3 250 xp"
+        "text": "4Pathell3509Level 3250 xp"
       },
       {
         "rank": 5,
-        "text": "5 infamoushype Level 3 250 xp"
+        "text": "5infamoushypeLevel 3250 xp"
       }
     ],
     "skill:Cultivation": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 10 3,795 xp"
+        "text": "🥇KorBlimeyLevel 103,795 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 4 634 xp"
+        "text": "🥈3for100Level 4634 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Thomasb Level 1 8 xp"
+        "text": "🥉ThomasbLevel 18 xp"
       }
     ],
-    "skill:Trapping": [
-      {
-        "rank": 1,
-        "text": "Nobody yet. It could be you!"
-      }
-    ],
+    "skill:Trapping": [],
     "skill:Seafaring": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 6 1,027 xp"
+        "text": "🥇KorBlimeyLevel 61,027 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 5 742 xp"
+        "text": "🥈3for100Level 5742 xp"
       }
     ],
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇 Pathell3509 Level 23 20,205 xp"
+        "text": "🥇Pathell3509Level 2320,636 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 19 13,849 xp"
+        "text": "🥈KorBlimeyLevel 2014,833 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 7 1,554 xp"
+        "text": "🥉3for100Level 71,595 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 6 1,098 xp"
+        "text": "4ThomasbLevel 61,098 xp"
       }
     ],
     "skill:Homesteading": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 6 1,311 xp"
+        "text": "🥇KorBlimeyLevel 61,311 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Vex Level 4 555 xp"
+        "text": "🥈VexLevel 4555 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 4 480 xp"
+        "text": "🥉3for100Level 4480 xp"
       },
       {
         "rank": 4,
-        "text": "4 Thomasb Level 3 246 xp"
+        "text": "4ThomasbLevel 3246 xp"
       },
       {
         "rank": 5,
-        "text": "5 Pathell3509 Level 1 9 xp"
+        "text": "5Pathell3509Level 19 xp"
       }
     ],
     "skill:Bardcraft": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 5 832 xp"
+        "text": "🥇KorBlimeyLevel 5832 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 3for100 Level 2 112 xp"
+        "text": "🥈3for100Level 2112 xp"
       }
     ],
-    "skill:Alchemy": [
-      {
-        "rank": 1,
-        "text": "Nobody yet. It could be you!"
-      }
-    ],
+    "skill:Alchemy": [],
     "skill:Weatherwarding": [
       {
         "rank": 1,
-        "text": "🥇 3for100 Level 3 167 xp"
+        "text": "🥇3for100Level 3167 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 2 123 xp"
+        "text": "🥈KorBlimeyLevel 2123 xp"
       }
     ],
     "skill:Brewing": [
       {
         "rank": 1,
-        "text": "🥇 3for100 Level 15 8,554 xp"
+        "text": "🥇3for100Level 158,554 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 KorBlimey Level 10 3,698 xp"
+        "text": "🥈KorBlimeyLevel 103,698 xp"
       }
     ],
     "skill:Glassblowing": [
       {
         "rank": 1,
-        "text": "🥇 Dead2master Level 2 80 xp"
+        "text": "🥇Dead2masterLevel 280 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 ChivalryKnight Level 1 30 xp"
+        "text": "🥈ChivalryKnightLevel 130 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 Zombie Level 1 30 xp"
+        "text": "🥉ZombieLevel 130 xp"
       },
       {
         "rank": 4,
-        "text": "4 KorBlimey Level 1 24 xp"
+        "text": "4KorBlimeyLevel 124 xp"
       },
       {
         "rank": 5,
-        "text": "5 3for100 Level 1 4 xp"
+        "text": "53for100Level 14 xp"
       }
     ],
     "skill:Beekeeping": [
       {
         "rank": 1,
-        "text": "🥇 KorBlimey Level 3 232 xp"
-      }
-    ],
-    "skill:Ranching": [
-      {
-        "rank": 1,
-        "text": "Nobody yet. It could be you!"
-      }
-    ],
-    "skill:Astronomy": [
-      {
-        "rank": 1,
-        "text": "Nobody yet. It could be you!"
-      }
-    ],
-    "skill:Tailoring": [
-      {
-        "rank": 1,
-        "text": "🥇 infamoushype Level 5 682 xp"
+        "text": "🥇KorBlimeyLevel 3232 xp"
       },
       {
         "rank": 2,
-        "text": "🥈 Dead2master Level 4 628 xp"
+        "text": "🥈3for100Level 122 xp"
+      }
+    ],
+    "skill:Ranching": [],
+    "skill:Astronomy": [],
+    "skill:Tailoring": [
+      {
+        "rank": 1,
+        "text": "🥇infamoushypeLevel 5682 xp"
+      },
+      {
+        "rank": 2,
+        "text": "🥈Dead2masterLevel 4628 xp"
       },
       {
         "rank": 3,
-        "text": "🥉 3for100 Level 4 494 xp"
+        "text": "🥉3for100Level 4494 xp"
       },
       {
         "rank": 4,
-        "text": "4 KorBlimey Level 2 80 xp"
+        "text": "4KorBlimeyLevel 280 xp"
       },
       {
         "rank": 5,
-        "text": "5 PrayingMantis Level 2 56 xp"
+        "text": "5PrayingMantisLevel 256 xp"
       },
       {
         "rank": 6,
-        "text": "6 Vex Level 2 48 xp"
+        "text": "6VexLevel 248 xp"
       },
       {
         "rank": 7,
-        "text": "7 Pathell3509 Level 1 8 xp"
+        "text": "7Pathell3509Level 18 xp"
       }
     ]
   }
