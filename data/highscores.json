@@ -1,21 +1,21 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-06T23:33:43.218Z",
+  "capturedAt": "2026-11-06T23:41:13.953Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey546total level"
+        "text": "🥇KorBlimey549total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100375total level"
+        "text": "🥈3for100379total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509292total level"
+        "text": "🥉Pathell3509295total level"
       },
       {
         "rank": 4,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb174total level"
+        "text": "5Thomasb176total level"
       },
       {
         "rank": 6,
@@ -35,11 +35,11 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer66total level"
+        "text": "8Iamdatrainer68total level"
       },
       {
         "rank": 9,
-        "text": "9Cerial64total level"
+        "text": "9Cerial65total level"
       },
       {
         "rank": 10,
@@ -49,15 +49,15 @@
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇Pathell35095,478slain"
+        "text": "🥇Pathell35095,481slain"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey1,968slain"
+        "text": "🥈KorBlimey1,988slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100693slain"
+        "text": "🥉3for100700slain"
       },
       {
         "rank": 4,
@@ -150,7 +150,7 @@
       },
       {
         "rank": 5,
-        "text": "5Pathell3509Level 5790 xp"
+        "text": "5Pathell3509Level 61,240 xp"
       },
       {
         "rank": 6,
@@ -184,7 +184,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 2319,880 xp"
+        "text": "🥉Pathell3509Level 2320,595 xp"
       },
       {
         "rank": 4,
@@ -192,7 +192,7 @@
       },
       {
         "rank": 5,
-        "text": "53for100Level 158,620 xp"
+        "text": "53for100Level 1710,317 xp"
       },
       {
         "rank": 6,
@@ -348,11 +348,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈IamdatrainerLevel 125,520 xp"
+        "text": "🥈IamdatrainerLevel 146,960 xp"
       },
       {
         "rank": 3,
-        "text": "🥉CerialLevel 92,680 xp"
+        "text": "🥉CerialLevel 103,256 xp"
       },
       {
         "rank": 4,
@@ -466,11 +466,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3137,657 xp"
+        "text": "🥇KorBlimeyLevel 3444,589 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 2422,515 xp"
+        "text": "🥈3for100Level 2625,091 xp"
       },
       {
         "rank": 3,
@@ -508,7 +508,7 @@
     "skill:Ranged": [
       {
         "rank": 1,
-        "text": "🥇Pathell3509Level 68180,125 xp"
+        "text": "🥇Pathell3509Level 68180,810 xp"
       },
       {
         "rank": 2,
@@ -728,7 +728,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 3250 xp"
+        "text": "🥉Pathell3509Level 3250 xp"
+      },
+      {
+        "rank": 4,
+        "text": "4ThomasbLevel 3250 xp"
       }
     ],
     "skill:Kindling": [
@@ -813,15 +817,15 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇Pathell3509Level 2320,636 xp"
+        "text": "🥇Pathell3509Level 2320,722 xp"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 2015,366 xp"
+        "text": "🥈KorBlimeyLevel 2015,915 xp"
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 71,621 xp"
+        "text": "🥉3for100Level 71,730 xp"
       },
       {
         "rank": 4,
@@ -918,15 +922,15 @@
     "skill:Tailoring": [
       {
         "rank": 1,
-        "text": "🥇infamoushypeLevel 5682 xp"
+        "text": "🥇ThomasbLevel 61,358 xp"
       },
       {
         "rank": 2,
-        "text": "🥈Dead2masterLevel 4628 xp"
+        "text": "🥈infamoushypeLevel 5682 xp"
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 4544 xp"
+        "text": "🥉Dead2masterLevel 4628 xp"
       },
       {
         "rank": 4,
