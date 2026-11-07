@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071320">
+<title>Woodlands Wiki</title><link rel="stylesheet" href="wiki.css">
+<style>
+.stock{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}.stock td{padding:4px 6px;border-top:1px solid #22344b}.stock td:last-child{text-align:right;color:var(--gold);white-space:nowrap}
+.cat{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding-top:8px!important}
+.mapNav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}.mapNav b{width:100%;font-size:12px;color:var(--muted);margin-top:6px}
+.qcard p{margin:6px 0;color:#cfdcec;font-size:13.5px;line-height:1.55}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.tiers ul{margin:4px 0 0;padding-left:18px;font-size:13px;color:#cfdcec}
+@media(max-width:700px){.tiers{grid-template-columns:1fr}}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cinzel:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head><body>
+<div class="wrap">
+<header class="top"><a class="brand" href="./"><span>✦</span>WOODLANDS</a><nav class="sitenav" aria-label="Site"><a href="./">🏆 Highscores</a><a href="./#players">♟ Players</a><a href="skills.html">⚔ Skills</a><a href="monsters.html">🐉 Monsters</a><a href="wiki.html" id="navWiki" aria-current="page">📖 Wiki</a><a href="wiki.html#tab=maps" id="navMaps">🗺 Maps</a></nav></header>
+<section class="intro"><div class="eyebrow">✦ The Woodlands wiki ✦</div><h1>Wiki</h1><p>Towns and what they offer, dungeons and bosses, quests, every item and where to get it, guilds, diaries, islands, masterworks and maps of the world.</p></section>
+<div class="tabs" role="tablist" id="tabs">
+  <button role="tab" data-tab="towns">🏘 Towns</button><button role="tab" data-tab="dungeons">🕳 Dungeons &amp; bosses</button><button role="tab" data-tab="quests">📜 Quests</button>
+  <button role="tab" data-tab="items">🎒 Items</button><button role="tab" data-tab="guilds">🏛 Guilds &amp; diaries</button><button role="tab" data-tab="travel">⛵ Islands &amp; masterworks</button><button role="tab" data-tab="maps">🗺 Maps</button>
+</div>
+<main id="main"><div class="panel pad empty">Loading the wiki…</div></main>
+<p class="foot">All levels, prices, stats and locations come straight from the game's data. Areas are worked out from map coordinates, so a few spots on the edge of town may be listed under the nearest area.</p>
+</div>
+<script src="wiki-common.js"></script>
+<script>
+'use strict';
+const { $, esc, fmt, pct } = W;
+let D = null, tab = 'towns';
+const mobName = id => (D.monsters.find(m => m.id === id) || {}).name || id;
+
+const VIEWS = {
+  towns() {
+    return `<div class="cards">${D.towns.map(t => `<article class="card"><h3>${esc(t.name)}</h3>
+      <div class="facts">${t.banks.length ? `<div class="fact"><b>${t.banks.length}</b>bank${t.banks.length > 1 ? 's' : ''}</div>` : ''}<div class="fact"><b>${t.shops.length}</b>shops</div><div class="fact"><b>${t.stations.length}</b>stations</div></div>
+      ${t.banks.length ? `<p><b>Bank:</b> ${esc(t.banks.join(', '))}</p>` : ''}
+      ${t.stations.length ? `<p><b>Stations:</b> ${t.stations.map(s => `<span class="tag">${esc(s)}</span>`).join('')}</p>` : ''}
+      ${t.stalls.length ? `<p><b>Stalls:</b> ${esc(t.stalls.join(', '))}</p>` : ''}
+      ${t.other.length ? `<p><b>Also here:</b> ${esc(t.other.join(' · '))}</p>` : ''}
+      ${t.shops.map(sh => { let last = null; return `<details><summary>🛒 ${esc(sh.name)} <span class="muted">(${esc(sh.keeper)} · ${sh.stock.length} items)</span></summary><table class="stock">${sh.stock.map(s => { const head = s.cat && s.cat !== last ? `<tr><td colspan="2" class="cat">${esc(s.cat)}</td></tr>` : ''; last = s.cat; return head + `<tr><td>${esc(s.item)}${s.qty > 1 ? ` <span class="muted">×${s.qty}</span>` : ''}</td><td>${fmt(s.price)} gp</td></tr>`; }).join('')}</table></details>`; }).join('')}
+      ${t.npcs.length ? `<details><summary>👥 ${t.npcs.length} other people</summary><ul class="plain">${t.npcs.map(n => `<li>${esc(n.name)} <span class="muted">· ${esc(n.role)}</span></li>`).join('')}</ul></details>` : ''}
+      ${D.map.towns.some(m => m.name === t.name) ? `<p style="margin:10px 0 0"><a href="#tab=maps&map=town:${encodeURIComponent(t.name)}">View on map →</a></p>` : ''}
+    </article>`).join('')}</div>`;
+  },
+  dungeons() {
+    return `<section class="panel pad"><h2>Bosses</h2><div class="tableScroll"><table class="data"><thead><tr><th>Boss</th><th class="num">Level</th><th>Lair</th><th>Area</th></tr></thead><tbody>${D.bosses.map(b => `<tr><td><a href="monsters.html#m=${encodeURIComponent(b.id)}"><b>${esc(b.name)}</b></a></td><td class="num">${b.lvl ?? '—'}</td><td>${esc(b.lair)}</td><td class="detail">${esc(b.area)}</td></tr>`).join('')}</tbody></table></div></section>
+    <h2 style="margin:22px 0 10px">Dungeons</h2><div class="cards">${D.dungeons.map(d => `<article class="card"><h3>${esc(d.name)}</h3><div class="facts"><div class="fact"><b>${esc(d.theme || '—')}</b>theme</div>${d.rooms ? `<div class="fact"><b>${d.rooms}</b>rooms</div>` : ''}<div class="fact"><b>${esc(d.size)}</b>size</div></div>
+      <p><b>Entrance:</b> ${esc(d.entrance)}</p><h3 style="font-size:14px">Monsters</h3><ul class="plain">${d.monsters.map(m => `<li><a href="monsters.html#m=${encodeURIComponent(m.id)}">${esc(m.name)}</a>${m.lvl ? ` <span class="muted">lv ${m.lvl}</span>` : ''}${m.count ? ` <span class="muted">×${m.count}</span>` : ''}${m.boss ? ' <span class="tag boss">Boss</span>' : ''}</li>`).join('')}</ul>
+      ${D.map.caves.some(c => c.id === d.id) ? `<p style="margin:10px 0 0"><a href="#tab=maps&map=cave:${encodeURIComponent(d.id)}">View dungeon map →</a></p>` : ''}</article>`).join('')}</div>`;
+  },
+  quests() {
+    const chains = [...new Set(D.quests.map(q => q.chain || 'Other'))];
+    return `<div class="toolbar panel" style="margin-bottom:14px;border-radius:14px"><input class="control" id="qq" type="search" placeholder="Search quests…" aria-label="Search quests"></div>` +
+      chains.map(c => `<h2 style="margin:18px 0 10px">${esc(c)}</h2><div class="cards">${D.quests.filter(q => (q.chain || 'Other') === c).map(q => `<article class="card qcard" data-q="${esc((q.name + ' ' + q.giver + ' ' + q.where + ' ' + q.skills).toLowerCase())}"><h3>${esc(q.name)}</h3>
+        ${q.blurb ? `<p>${esc(q.blurb)}</p>` : ''}<p><b>Start:</b> ${esc(q.giver || '?')}${q.where ? ', ' + esc(q.where) : ''}</p>${q.skills ? `<p><b>Skills:</b> ${esc(q.skills)}</p>` : ''}${q.reward ? `<p><b>Reward:</b> ${esc(q.reward)}</p>` : ''}</article>`).join('')}</div>`).join('');
+  },
+  items() {
+    return `<section class="panel"><div class="toolbar"><input class="control" id="iq" type="search" placeholder="Search ${D.items.length} items…" aria-label="Search items"><select class="control" id="ik" aria-label="Item type"><option value="">All types</option>${[...new Set(D.items.map(i => i.kind))].sort().map(k => `<option>${esc(k)}</option>`).join('')}</select></div>
+      <div class="tableScroll" style="max-height:75vh"><table class="data"><thead><tr><th>Item</th><th>Type</th><th>Stats / effect</th><th>How to get it</th><th class="num">Sells for</th></tr></thead><tbody id="irows"></tbody></table></div></section>`;
+  },
+  guilds() {
+    return `<section class="panel pad"><h2>Guilds</h2><table class="data"><thead><tr><th>Guild</th><th>Requirement</th><th>Where</th></tr></thead><tbody>${D.guilds.map(g => `<tr><td><b>${esc(g.name)}</b></td><td>${esc(g.req)}</td><td class="detail">${esc(g.where)}</td></tr>`).join('')}</tbody></table></section>
+      <h2 style="margin:22px 0 10px">Achievement diaries</h2><div class="cards" style="grid-template-columns:1fr">${D.diaries.map(d => `<article class="card"><h3>${esc(d.name)} <span class="muted" style="font-size:13px">· reward: ${esc(d.reward)}</span></h3><div class="tiers">${d.tiers.map((t, i) => `<div><span class="tag ${i === 2 ? 'elite' : ''}">${['Easy', 'Medium', 'Hard'][i] || 'Tier ' + (i + 1)}</span><ul>${t.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`).join('')}</div></article>`).join('')}</div>`;
+  },
+  travel() {
+    return `<section class="panel pad"><h2>Islands</h2><table class="data"><thead><tr><th>Island</th><th class="num">Seafaring</th><th>Boat needed</th><th class="num">First landing XP</th></tr></thead><tbody>${D.islands.map(i => `<tr><td><b>${esc(i.name)}</b></td><td class="num">${i.sailing}</td><td>${esc(i.boat)}</td><td class="num">${fmt(i.xp)}</td></tr>`).join('')}</tbody></table></section>
+      <h2 style="margin:22px 0 10px">Masterworks</h2><div class="cards">${D.masterworks.map(m => `<article class="card"><h3>${esc(m.name)}</h3><p class="muted">${esc(m.perk || '')}</p><table class="data"><thead><tr><th>Stage</th><th>Skill</th><th>Materials</th></tr></thead><tbody>${m.stages.map(s => `<tr><td>${esc(s.step)}</td><td class="lv">${esc(s.skill)} ${s.lvl}</td><td class="detail">${esc(s.needs)}</td></tr>`).join('')}</tbody></table></article>`).join('')}</div>`;
+  },
+  maps() {
+    const M = D.map;
+    return `<section class="panel pad"><div class="mapNav" id="mapNav"><b>Regions</b>${M.regions.map(r => `<button class="chip" data-map="region:${esc(r.id)}">${esc(r.name)}</button>`).join('')}
+      <b>Towns</b>${M.towns.map(t => `<button class="chip" data-map="town:${esc(t.name)}">${esc(t.name)}</button>`).join('')}
+      <b>Dungeons</b>${M.caves.map(c => `<button class="chip" data-map="cave:${esc(c.id)}">${esc(c.name)}</button>`).join('')}</div>
+      <h2 id="mapTitle"></h2><div class="legend" id="legend">${W.legendHtml()}</div>
+      <div class="mapWrap"><canvas id="map"></canvas><div class="tip" id="tip"></div></div>
+      <p class="muted" style="font-size:12px">Hover a marker for its name and coordinates. Coastlines are drawn as simple circles; buildings, walls, rivers and lakes are at their real positions. Dungeon maps show the actual tile layout with what spawns in each room.</p></section>`;
+  },
+};
+let mapKey = null; const lookup = {};
+function drawMapKey(key) {
+  const M = D.map; mapKey = key || 'region:mainland'; const [kind, id] = mapKey.split(/:(.*)/s);
+  let view, name;
+  if (kind === 'cave') { const c = M.caves.find(c => c.id === id) || M.caves[0]; view = { cave: c }; name = c.name; }
+  else if (kind === 'town') { const t = M.towns.find(t => t.name === id) || M.towns[0]; const r = Math.max(t.r, 45); view = { x0: t.x - r, x1: t.x + r, z0: t.z - r, z1: t.z + r }; name = t.name; }
+  else { const r = M.regions.find(r => r.id === id) || M.regions[1]; view = { x0: r.c[0] - r.r, x1: r.c[0] + r.r, z0: r.c[1] - r.r, z1: r.c[1] + r.r }; name = r.name;
+    if (r.id === 'mainland') for (const [x, z, rr] of M.isles) { view.x0 = Math.min(view.x0, x - rr - 10); view.x1 = Math.max(view.x1, x + rr + 10); view.z0 = Math.min(view.z0, z - rr - 10); view.z1 = Math.max(view.z1, z + rr + 10); } }
+  $('mapTitle').textContent = name; $('legend').hidden = kind === 'cave';
+  $('mapNav').querySelectorAll('[data-map]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.map === mapKey)));
+  const draw = () => { lookup.fn = W.drawMap($('map'), M, view, { mobName }); };
+  draw(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (tab === 'maps') draw(); });   // redraw once the medieval fonts arrive
+  W.setHash({ tab: 'maps', map: mapKey });
+}
+function itemRows() {
+  const q = $('iq').value.trim().toLowerCase(), k = $('ik').value;
+  const stat = i => [Object.entries(i.stats).map(([s, v]) => `${s} ${v > 0 ? '+' : ''}${v}`).join(', '), i.heal ? 'heals ' + i.heal : '', i.req.length ? 'needs ' + i.req.join(', ') : '', i.perk || ''].filter(Boolean).join(' · ');
+  const src = i => [i.gathered.length ? '⛏ ' + i.gathered.join('; ') : '', i.made.length ? '🔨 ' + i.made.join('; ') : '', i.sold.length ? '🛒 ' + i.sold.slice(0, 4).join('; ') + (i.sold.length > 4 ? '…' : '') : '', i.dropped.length ? '💀 ' + i.dropped.slice(0, 5).join('; ') + (i.dropped.length > 5 ? ` +${i.dropped.length - 5} more` : '') : ''].filter(Boolean).map(esc).join('<br>');
+  const list = D.items.filter(i => (!k || i.kind === k) && (!q || (i.name + ' ' + i.made.join(' ') + ' ' + i.sold.join(' ') + ' ' + i.dropped.join(' ') + ' ' + i.gathered.join(' ')).toLowerCase().includes(q)));
+  $('irows').innerHTML = list.slice(0, 600).map(i => `<tr><td><b>${esc(i.name)}</b>${i.slot ? ` <span class="muted">· ${esc(i.slot)}</span>` : ''}</td><td><span class="tag">${esc(i.kind)}</span></td><td class="detail">${esc(stat(i))}</td><td class="detail">${src(i)}</td><td class="num">${i.sell ? fmt(i.sell) + ' gp' : '—'}</td></tr>`).join('') || '<tr><td colspan="5" class="empty">No items match.</td></tr>';
+}
+function show(t, opts = {}) {
+  tab = VIEWS[t] ? t : 'towns';
+  $('tabs').querySelectorAll('[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+  if (tab !== 'maps') { $('navWiki').setAttribute('aria-current', 'page'); $('navMaps').removeAttribute('aria-current'); } else { $('navMaps').setAttribute('aria-current', 'page'); $('navWiki').removeAttribute('aria-current'); }
+  $('main').innerHTML = VIEWS[tab]();
+  if (tab === 'maps') { $('mapNav').addEventListener('click', e => { const b = e.target.closest('[data-map]'); if (b) drawMapKey(b.dataset.map); }); W.attachTip($('map'), $('tip'), lookup); drawMapKey(opts.map); }
+  else if (tab === 'items') { $('iq').addEventListener('input', itemRows); $('ik').addEventListener('change', itemRows); itemRows(); W.setHash({ tab }); }
+  else if (tab === 'quests') { $('qq').addEventListener('input', e => { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('[data-q]').forEach(c => { c.hidden = q && !c.dataset.q.includes(q); }); }); W.setHash({ tab }); }
+  else W.setHash({ tab });
+}
+$('tabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) show(b.dataset.tab); });
+window.addEventListener('hashchange', () => { const h = W.hash(); if (h.tab && (h.tab !== tab || (h.map && h.map !== mapKey))) show(h.tab, h); });
+let resizeT; window.addEventListener('resize', () => { clearTimeout(resizeT); resizeT = setTimeout(() => { if (tab === 'maps') drawMapKey(mapKey); }, 200); });
+W.load().then(d => { D = d; const h = W.hash(); show(h.tab || 'towns', h); })
+  .catch(err => { $('main').innerHTML = `<div class="panel pad empty">Could not load the wiki data: ${esc(err.message)}</div>`; });
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="theme-bg.js"></script>
+<script defer src="theme.js"></script>
+</body></html>
