@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071320">
+<title>Woodlands Monsters</title><link rel="stylesheet" href="wiki.css">
+<style>
+.mlayout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(340px,1fr);gap:16px;align-items:start}
+.mdetail{position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto}
+tbody tr.active{background:linear-gradient(90deg,#1d3556,#132b48);box-shadow:inset 0 0 0 1px #519ee2}
+.pick{background:none;border:0;padding:0;color:#f2f6ff;font-weight:700;font-family:Georgia,serif;font-size:15px;text-align:left}.pick:hover{color:#7ce1f6;text-decoration:underline}
+@media(max-width:1000px){.mlayout{grid-template-columns:1fr}.mdetail{position:static;max-height:none}}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cinzel:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head><body>
+<div class="wrap">
+<header class="top"><a class="brand" href="./"><span>✦</span>WOODLANDS</a><nav class="sitenav" aria-label="Site"><a href="./">🏆 Highscores</a><a href="./#players">♟ Players</a><a href="skills.html">⚔ Skills</a><a href="monsters.html" aria-current="page">🐉 Monsters</a><a href="wiki.html">📖 Wiki</a><a href="wiki.html#tab=maps">🗺 Maps</a></nav></header>
+<section class="intro"><div class="eyebrow">✦ Bestiary ✦</div><h1>Monsters</h1><p>Every creature in Woodlands: levels, hitpoints, max hits, experience, full drop tables with chances, and everywhere it can be found. Click a monster for details.</p></section>
+<div class="mlayout">
+  <section class="panel">
+    <div class="toolbar"><input class="control" id="q" type="search" placeholder="Search monsters, drops or places…" aria-label="Search monsters">
+      <select class="control" id="sort" aria-label="Sort"><option value="lvl">Sort: level</option><option value="name">Sort: name</option><option value="hp">Sort: hitpoints</option><option value="xp">Sort: XP</option><option value="hit">Sort: max hit</option></select></div>
+    <div class="toolbar"><div class="chips" id="filters"><button class="chip" data-f="" aria-pressed="true">All</button><button class="chip" data-f="Boss" aria-pressed="false">Bosses</button><button class="chip" data-f="Elite" aria-pressed="false">Elite</button><button class="chip" data-f="bounty" aria-pressed="false">Bounty creatures</button><button class="chip" data-f="Aggressive" aria-pressed="false">Aggressive</button><button class="chip" data-f="Passive" aria-pressed="false">Passive</button><button class="chip" data-f="dungeon" aria-pressed="false">In dungeons</button></div></div>
+    <div class="tableScroll"><table class="data"><thead><tr><th>Monster</th><th class="num">Level</th><th class="num">HP</th><th class="num">Max hit</th><th class="num">XP</th><th>Found in</th></tr></thead><tbody id="rows"></tbody></table><div class="empty" id="empty" hidden>No monsters match.</div></div>
+  </section>
+  <aside class="panel pad mdetail" id="detail"><div class="empty">Loading…</div></aside>
+</div>
+<p class="foot">Stats and drop chances come straight from the game's data. A drop chance of 100% means it always drops. "Found in" lists each area with the number of spawns there.</p>
+</div>
+<script src="wiki-common.js"></script>
+<script>
+'use strict';
+const { $, esc, fmt, pct } = W;
+let MON = [], sel = null, filter = '';
+const lvlTxt = m => m.levels.length ? (m.levels.length > 1 ? m.levels[0].lvl + '–' + m.levels[m.levels.length - 1].lvl : String(m.levels[0].lvl)) : '—';
+const maxOf = (m, k) => Math.max(0, ...m.levels.map(l => l[k] || 0));
+const hpTxt = m => { const v = m.levels.map(l => l.hp).filter(x => x != null); return v.length ? (v.length > 1 && v[0] !== v[v.length - 1] ? fmt(v[0]) + '–' + fmt(v[v.length - 1]) : fmt(v[0])) : '—'; };
+const hitTxt = m => { const v = m.levels.map(l => l.maxHit).filter(x => x != null); return v.length ? (v.length > 1 && v[0] !== v[v.length - 1] ? v[0] + '–' + v[v.length - 1] : String(v[0])) : '—'; };
+function rows() {
+  const q = $('q').value.trim().toLowerCase(), s = $('sort').value;
+  const keep = m => (!filter || (filter === 'bounty' ? m.slayer : filter === 'dungeon' ? m.areas.some(a => /^Dungeon|Delve/.test(a.name)) : m.tags.includes(filter))) &&
+    (!q || (m.name + ' ' + m.areas.map(a => a.name).join(' ') + ' ' + m.drops.map(d => d.item).join(' ')).toLowerCase().includes(q));
+  const cmp = { lvl: (a, b) => (a.levels[0]?.lvl || 0) - (b.levels[0]?.lvl || 0), name: (a, b) => a.name.localeCompare(b.name), hp: (a, b) => maxOf(b, 'hp') - maxOf(a, 'hp'), xp: (a, b) => (b.xp || 0) - (a.xp || 0), hit: (a, b) => maxOf(b, 'maxHit') - maxOf(a, 'maxHit') }[s];
+  const list = MON.filter(keep).sort((a, b) => cmp(a, b) || a.name.localeCompare(b.name));
+  $('rows').innerHTML = list.map(m => `<tr class="${m.id === sel ? 'active' : ''}"><td><button class="pick" data-id="${esc(m.id)}">${esc(m.name)}</button><div>${m.tags.map(t => `<span class="tag ${t === 'Boss' ? 'boss' : t === 'Elite' ? 'elite' : t === 'Aggressive' ? 'warn' : ''}">${esc(t)}</span>`).join('')}${m.slayer ? `<span class="tag elite">Bounty ${m.slayer}</span>` : ''}</div></td><td class="num">${lvlTxt(m)}</td><td class="num">${hpTxt(m)}</td><td class="num">${hitTxt(m)}</td><td class="num">${fmt(m.xp)}</td><td class="detail">${esc(m.areas.map(a => a.name).slice(0, 3).join(' · '))}${m.areas.length > 3 ? ' · +' + (m.areas.length - 3) + ' more' : ''}</td></tr>`).join('');
+  $('empty').hidden = list.length > 0;
+}
+function detail(id) {
+  const m = MON.find(x => x.id === id) || MON[0]; if (!m) return; sel = m.id; W.setHash({ m: m.id }); rows();
+  $('detail').innerHTML = `<div class="eyebrow">${m.tags.includes('Boss') ? 'Boss' : 'Monster'}</div><h2 style="font-size:28px;margin:4px 0 6px">${esc(m.name)}</h2>
+  <div>${m.tags.map(t => `<span class="tag ${t === 'Boss' ? 'boss' : t === 'Elite' ? 'elite' : t === 'Aggressive' ? 'warn' : ''}">${esc(t)}</span>`).join('')}</div>
+  <div class="facts"><div class="fact"><b>${lvlTxt(m)}</b>level</div><div class="fact"><b>${hpTxt(m)}</b>hitpoints</div><div class="fact"><b>${hitTxt(m)}</b>max hit</div><div class="fact"><b>${fmt(m.xp)}</b>xp per kill</div>${m.respawn ? `<div class="fact"><b>${m.respawn}s</b>respawn</div>` : ''}${m.aggro ? `<div class="fact"><b>${m.aggro}</b>aggro range</div>` : ''}</div>
+  ${m.slayer ? `<p><span class="tag elite">Needs Bounty level ${m.slayer}</span> to damage it.</p>` : ''}
+  ${m.levels.length > 1 ? `<h3>Stats by level</h3><table class="data"><thead><tr><th>Level</th><th class="num">HP</th><th class="num">Max hit</th><th class="num">Accuracy</th></tr></thead><tbody>${m.levels.map(l => `<tr><td class="lv">${l.lvl}</td><td class="num">${fmt(l.hp)}</td><td class="num">${l.maxHit ?? '—'}</td><td class="num">${l.acc != null ? Math.round(l.acc * 100) + '%' : '—'}</td></tr>`).join('')}</tbody></table>` : ''}
+  <h3>Drops</h3>${m.drops.length ? `<table class="data"><thead><tr><th>Item</th><th class="num">Amount</th><th class="num">Chance</th></tr></thead><tbody>${m.drops.slice().sort((a, b) => b.chance - a.chance).map(d => `<tr><td>${esc(d.item)}</td><td class="num">${d.min === d.max ? d.min : d.min + '–' + d.max}</td><td class="num">${pct(d.chance)}</td></tr>`).join('')}</tbody></table>` : '<p class="muted">No drops.</p>'}
+  <h3>Where to find it</h3>${m.areas.length ? `<ul class="plain">${m.areas.map(a => `<li>${esc(a.name)}${a.count ? ` <span class="muted">· ${a.count} spawn${a.count > 1 ? 's' : ''}</span>` : ''}</li>`).join('')}</ul>` : '<p class="muted">Not in a fixed spawn: appears through quests, events or farm pens.</p>'}
+  ${m.assignedBy.length ? `<h3>Bounty tasks</h3><ul class="plain">${m.assignedBy.map(a => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+  <p style="margin-top:16px"><a href="wiki.html#tab=maps">See the maps →</a></p>`;
+  if (matchMedia('(max-width:1000px)').matches) $('detail').scrollIntoView({ behavior: 'smooth' });
+}
+$('rows').addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) detail(b.dataset.id); });
+$('q').addEventListener('input', rows); $('sort').addEventListener('change', rows);
+$('filters').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (!b) return; filter = b.dataset.f; $('filters').querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c === b))); rows(); });
+W.load().then(d => { MON = d.monsters; const h = W.hash(); sel = h.m || null; rows(); if (sel) detail(sel); else $('detail').innerHTML = '<div class="empty">Click a monster to see its stats, drops and locations.</div>'; })
+  .catch(err => { $('detail').innerHTML = `<div class="empty">Could not load the wiki data: ${esc(err.message)}</div>`; });
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="theme-bg.js"></script>
+<script defer src="theme.js"></script>
+</body></html>
