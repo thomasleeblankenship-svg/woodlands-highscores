@@ -1,7 +1,7 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-06T23:55:29.620Z",
+  "capturedAt": "2026-11-07T00:01:47.620Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
@@ -11,11 +11,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈3for100389total level"
+        "text": "🥈3for100391total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509298total level"
+        "text": "🥉Pathell3509299total level"
       },
       {
         "rank": 4,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb178total level"
+        "text": "5Thomasb179total level"
       },
       {
         "rank": 6,
@@ -35,11 +35,11 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer71total level"
+        "text": "8Iamdatrainer72total level"
       },
       {
         "rank": 9,
-        "text": "9Cerial67total level"
+        "text": "9Cerial69total level"
       },
       {
         "rank": 10,
@@ -53,11 +53,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey2,026slain"
+        "text": "🥈KorBlimey2,027slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100733slain"
+        "text": "🥉3for100760slain"
       },
       {
         "rank": 4,
@@ -88,7 +88,12 @@
         "text": "10Zombie8slain"
       }
     ],
-    "Bosses": [],
+    "Bosses": [
+      {
+        "rank": 1,
+        "text": "🥇KorBlimey1bosses"
+      }
+    ],
     "Quests": [
       {
         "rank": 1,
@@ -176,7 +181,7 @@
     "skill:Mining": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 68180,389 xp"
+        "text": "🥇KorBlimeyLevel 68182,339 xp"
       },
       {
         "rank": 2,
@@ -184,7 +189,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 2422,285 xp"
+        "text": "🥉Pathell3509Level 2524,235 xp"
       },
       {
         "rank": 4,
@@ -348,11 +353,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈IamdatrainerLevel 1710,746 xp"
+        "text": "🥈IamdatrainerLevel 1812,522 xp"
       },
       {
         "rank": 3,
-        "text": "🥉CerialLevel 125,416 xp"
+        "text": "🥉CerialLevel 146,796 xp"
       },
       {
         "rank": 4,
@@ -466,11 +471,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3957,785 xp"
+        "text": "🥇KorBlimeyLevel 3959,477 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 2932,141 xp"
+        "text": "🥈3for100Level 3137,665 xp"
       },
       {
         "rank": 3,
@@ -825,11 +830,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 2117,048 xp"
+        "text": "🥈KorBlimeyLevel 2117,393 xp"
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 82,060 xp"
+        "text": "🥉3for100Level 82,413 xp"
       },
       {
         "rank": 4,
@@ -896,19 +901,23 @@
       },
       {
         "rank": 2,
-        "text": "🥈ChivalryKnightLevel 130 xp"
+        "text": "🥈ThomasbLevel 260 xp"
       },
       {
         "rank": 3,
-        "text": "🥉ZombieLevel 130 xp"
+        "text": "🥉ChivalryKnightLevel 130 xp"
       },
       {
         "rank": 4,
-        "text": "4KorBlimeyLevel 124 xp"
+        "text": "4ZombieLevel 130 xp"
       },
       {
         "rank": 5,
-        "text": "53for100Level 14 xp"
+        "text": "5KorBlimeyLevel 124 xp"
+      },
+      {
+        "rank": 6,
+        "text": "63for100Level 14 xp"
       }
     ],
     "skill:Beekeeping": [
