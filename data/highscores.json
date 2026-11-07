@@ -1,21 +1,21 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T00:06:52.505Z",
+  "capturedAt": "2026-11-07T00:11:58.901Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey556total level"
+        "text": "🥇KorBlimey558total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100394total level"
+        "text": "🥈3for100396total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509299total level"
+        "text": "🥉Pathell3509301total level"
       },
       {
         "rank": 4,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb180total level"
+        "text": "5Thomasb181total level"
       },
       {
         "rank": 6,
@@ -35,7 +35,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer73total level"
+        "text": "8Iamdatrainer75total level"
       },
       {
         "rank": 9,
@@ -49,15 +49,15 @@
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇Pathell35095,500slain"
+        "text": "🥇Pathell35095,511slain"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey2,031slain"
+        "text": "🥈KorBlimey2,042slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100781slain"
+        "text": "🥉3for100803slain"
       },
       {
         "rank": 4,
@@ -77,7 +77,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer12slain"
+        "text": "8Iamdatrainer21slain"
       },
       {
         "rank": 9,
@@ -189,7 +189,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 2524,235 xp"
+        "text": "🥉Pathell3509Level 2626,380 xp"
       },
       {
         "rank": 4,
@@ -411,11 +411,11 @@
       },
       {
         "rank": 6,
-        "text": "6VexLevel 5670 xp"
+        "text": "6IamdatrainerLevel 61,034 xp"
       },
       {
         "rank": 7,
-        "text": "7IamdatrainerLevel 4566 xp"
+        "text": "7VexLevel 5670 xp"
       },
       {
         "rank": 8,
@@ -433,7 +433,7 @@
     "skill:Strength": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3033,729 xp"
+        "text": "🥇KorBlimeyLevel 3035,425 xp"
       },
       {
         "rank": 2,
@@ -471,11 +471,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3960,217 xp"
+        "text": "🥇KorBlimeyLevel 4061,013 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 3341,653 xp"
+        "text": "🥈3for100Level 3445,597 xp"
       },
       {
         "rank": 3,
@@ -513,7 +513,7 @@
     "skill:Ranged": [
       {
         "rank": 1,
-        "text": "🥇Pathell3509Level 68184,746 xp"
+        "text": "🥇Pathell3509Level 69186,488 xp"
       },
       {
         "rank": 2,
@@ -681,7 +681,7 @@
       },
       {
         "rank": 7,
-        "text": "7IamdatrainerLevel 4506 xp"
+        "text": "7IamdatrainerLevel 4618 xp"
       },
       {
         "rank": 8,
@@ -826,15 +826,15 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇Pathell3509Level 2421,201 xp"
+        "text": "🥇Pathell3509Level 2421,355 xp"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 2117,506 xp"
+        "text": "🥈KorBlimeyLevel 2217,921 xp"
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 92,869 xp"
+        "text": "🥉3for100Level 103,434 xp"
       },
       {
         "rank": 4,
@@ -897,7 +897,7 @@
     "skill:Glassblowing": [
       {
         "rank": 1,
-        "text": "🥇ThomasbLevel 3192 xp"
+        "text": "🥇ThomasbLevel 4384 xp"
       },
       {
         "rank": 2,
