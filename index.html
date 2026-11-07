@@ -11,7 +11,11 @@ body:before{content:"";position:absolute;inset:54px 0 auto;height:415px;z-index:
 body:after{content:"";position:absolute;inset:315px 0 auto;height:270px;pointer-events:none;z-index:-1;background:linear-gradient(#071b2700,#071320)}
 .wrap{max-width:1530px;padding:0 24px 60px}
 .top{position:relative;min-height:74px;padding:14px 0 17px;border-bottom:1px solid #3654788c;gap:18px}
-.top:after{content:"⌂ Home     🏆 Highscores     ⚔ Skills     ♟ Players";position:absolute;left:285px;top:27px;font-size:13px;color:#c7d7ee;letter-spacing:.025em;white-space:pre;pointer-events:none}
+.top{justify-content:flex-start}.top .topnote{margin-left:auto}
+.sitenav{display:flex;flex-wrap:wrap;gap:4px}
+.sitenav a{color:#c7d7ee;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:9px;border:1px solid transparent;white-space:nowrap}
+.sitenav a:hover{background:#13284299;border-color:#2c4766}.sitenav a[aria-current="page"]{color:#fff;background:#1d3a5e;border-color:#4d86c2}
+.brand{text-decoration:none}
 .brand{font-size:25px;color:#ffdf9a;text-shadow:0 2px 18px #ffcf7430}
 .brand span{color:#ffc96a;font-size:34px}
 .topnote{font-size:11px;border:1px solid #375778;background:#0d2035a8;padding:9px 13px;border-radius:11px;max-width:250px;text-align:right}
@@ -69,14 +73,17 @@ body:after{content:"";position:absolute;inset:315px 0 auto;height:270px;pointer-
 .notes{color:#a7b9ce}
 .footer{color:#a6b7cd}
 .localUpload{background:#11253a;border-color:#4a6d8b;color:#d5e8f7}
-@media(max-width:1220px){.top:after{display:none}.layout{grid-template-columns:1fr}.profile{position:static}.skills{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1220px){.layout{grid-template-columns:1fr}.profile{position:static}.skills{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:680px){.wrap{padding:0 10px 35px}.intro{padding:24px 0 12px}.intro h1:before,.intro h1:after{margin:0 6px}.metrics{grid-template-columns:repeat(2,1fr)}.scores td{padding:11px 9px}.scores th{padding:12px 9px}.skills{grid-template-columns:repeat(2,minmax(0,1fr))}.profileTop{padding:15px;min-height:125px}.profileTop:before{width:56px;flex-basis:56px;height:66px;font-size:40px;margin-right:3px}.identity h2{font-size:22px}.profileTop .total strong{font-size:29px}.topnote{max-width:185px}.brand{font-size:19px}.brand span{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 /* All players directory */
 .allPlayers{margin-top:18px}.allPlayers .scores td:last-child,.allPlayers .scores th:last-child{text-align:left;white-space:normal}.allPlayers .num{font-variant-numeric:tabular-nums;color:#e9d6ae;font-family:Georgia,serif}.allPlayers .muted{color:#7f93ab}.spots{display:flex;flex-wrap:wrap;gap:5px;min-width:220px}.spot{font-size:11px;padding:3px 7px;border-radius:7px;border:1px solid #33506f;background:#0d1d31;color:#bcd0e6;white-space:nowrap}.spot b{color:#f2f6ff}.spot.g1{border-color:#b48c3c;color:#f7d47c}.spot.g2{border-color:#7f93a8}.spot.g3{border-color:#9a6b4d}
 
-</style></head><body>
-<div class="wrap"><header class="top"><div class="brand"><span>✦</span>WOODLANDS</div><div class="topnote" id="status">Verified game leaderboard snapshots</div></header>
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cinzel:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head><body>
+<div class="wrap"><header class="top"><a class="brand" href="./"><span>✦</span>WOODLANDS</a><nav class="sitenav" aria-label="Site"><a href="./" aria-current="page">🏆 Highscores</a><a href="#players">♟ Players</a><a href="skills.html">⚔ Skills</a><a href="monsters.html">🐉 Monsters</a><a href="wiki.html">📖 Wiki</a><a href="wiki.html#tab=maps">🗺 Maps</a></nav><div class="topnote" id="status">Verified game leaderboard snapshots</div></header>
 <section class="intro"><div class="eyebrow">✦ The Hall of Legends ✦</div><h1>Woodlands Highscores</h1><p>Explore overall rankings and every skill leaderboard. Select a player to see their available skill levels, XP, combat records, and quest progress from the latest published game snapshot.</p></section>
 <div class="metrics"><div class="metric"><small>Reported adventurers</small><strong id="playerCount">—</strong></div><div class="metric"><small>Leaderboards</small><strong id="boardCount">—</strong></div><div class="metric"><small>Ranked characters</small><strong id="rankedCount">—</strong></div><div class="metric"><small>Last captured</small><strong id="captured" style="font-size:14px">—</strong></div></div>
 <main class="layout"><section class="panel"><div class="panelHead"><h2>🏆 Overall Leaderboard</h2><div class="sub">Choose Overall, combat, quests or any individual skill. Click a username to open their profile.</div></div><div class="controls"><select class="control" id="board" aria-label="Select leaderboard"></select><input class="control" id="search" type="search" placeholder="Search players…" aria-label="Search players"></div><div class="tableScroll"><table class="scores"><thead><tr><th>Rank</th><th>Player</th><th id="valueHeading">Total Level</th><th>Profile</th></tr></thead><tbody id="rows"></tbody></table><div class="empty" id="empty" hidden></div></div></section>
@@ -168,4 +175,7 @@ const sc=document.createElement('td'),wrap=document.createElement('div');wrap.cl
 $('allEmpty').hidden=rows.length>0;$('allEmpty').textContent=profiles.size?'No players match your search.':'No players in the current snapshot.'}
 $('allSearch').addEventListener('input',renderAllPlayers);$('allSort').addEventListener('change',renderAllPlayers);
 loadPublished();setInterval(loadPublished,60000);
-</script></body></html>
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="theme-bg.js"></script>
+<script defer src="theme.js"></script>
+</body></html>
