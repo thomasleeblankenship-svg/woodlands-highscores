@@ -1,13 +1,13 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T16:07:24.342Z",
+  "capturedAt": "2026-11-07T16:12:43.533Z",
   "reportedAdventurers": "38",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey808total level"
+        "text": "🥇KorBlimey809total level"
       },
       {
         "rank": 2,
@@ -15,11 +15,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509433total level"
+        "text": "🥉Pathell3509435total level"
       },
       {
         "rank": 4,
-        "text": "4Thomasb390total level"
+        "text": "4Thomasb392total level"
       },
       {
         "rank": 5,
@@ -49,11 +49,11 @@
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇Pathell35097,294slain"
+        "text": "🥇Pathell35097,355slain"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey4,058slain"
+        "text": "🥈KorBlimey4,073slain"
       },
       {
         "rank": 3,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "text": "4Thomasb1,333slain"
+        "text": "4Thomasb1,363slain"
       },
       {
         "rank": 5,
@@ -81,11 +81,11 @@
       },
       {
         "rank": 9,
-        "text": "9Cerial12slain"
+        "text": "9Tutorial18slain"
       },
       {
         "rank": 10,
-        "text": "10Tutorial10slain"
+        "text": "10Cerial12slain"
       }
     ],
     "Bosses": [
@@ -423,15 +423,15 @@
       },
       {
         "rank": 8,
-        "text": "8VexLevel 5670 xp"
+        "text": "8TutorialLevel 5914 xp"
       },
       {
         "rank": 9,
-        "text": "9CerialLevel 4518 xp"
+        "text": "9VexLevel 5670 xp"
       },
       {
         "rank": 10,
-        "text": "10TutorialLevel 4462 xp"
+        "text": "10CerialLevel 4518 xp"
       }
     ],
     "skill:Strength": [
@@ -483,15 +483,15 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 77233,477 xp"
+        "text": "🥈KorBlimeyLevel 78240,913 xp"
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 3238,554 xp"
+        "text": "🥉ThomasbLevel 3445,026 xp"
       },
       {
         "rank": 4,
-        "text": "4Pathell3509Level 2218,145 xp"
+        "text": "4Pathell3509Level 2421,687 xp"
       },
       {
         "rank": 5,
@@ -693,15 +693,15 @@
       },
       {
         "rank": 8,
-        "text": "8IamdatrainerLevel 61,010 xp"
+        "text": "8TutorialLevel 61,099 xp"
       },
       {
         "rank": 9,
-        "text": "9CerialLevel 4417 xp"
+        "text": "9IamdatrainerLevel 61,010 xp"
       },
       {
         "rank": 10,
-        "text": "10TutorialLevel 3312 xp"
+        "text": "10CerialLevel 4417 xp"
       }
     ],
     "skill:Bounty": [
@@ -834,7 +834,7 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3959,111 xp"
+        "text": "🥇KorBlimeyLevel 3959,414 xp"
       },
       {
         "rank": 2,
@@ -842,11 +842,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 3035,046 xp"
+        "text": "🥉Pathell3509Level 3035,427 xp"
       },
       {
         "rank": 4,
-        "text": "4ThomasbLevel 1913,425 xp"
+        "text": "4ThomasbLevel 1914,123 xp"
       }
     ],
     "skill:Homesteading": [
