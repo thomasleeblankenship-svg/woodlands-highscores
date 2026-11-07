@@ -1,25 +1,25 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T15:55:10.258Z",
+  "capturedAt": "2026-11-07T16:00:07.550Z",
   "reportedAdventurers": "38",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey806total level"
+        "text": "🥇KorBlimey807total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100581total level"
+        "text": "🥈3for100583total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509430total level"
+        "text": "🥉Pathell3509431total level"
       },
       {
         "rank": 4,
-        "text": "4Thomasb384total level"
+        "text": "4Thomasb387total level"
       },
       {
         "rank": 5,
@@ -49,19 +49,19 @@
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇Pathell35097,218slain"
+        "text": "🥇Pathell35097,253slain"
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey4,034slain"
+        "text": "🥈KorBlimey4,046slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for1004,023slain"
+        "text": "🥉3for1004,031slain"
       },
       {
         "rank": 4,
-        "text": "4Thomasb1,292slain"
+        "text": "4Thomasb1,313slain"
       },
       {
         "rank": 5,
@@ -137,7 +137,7 @@
       },
       {
         "rank": 10,
-        "text": "10Odin2quests"
+        "text": "10Tutorial4quests"
       }
     ],
     "skill:Lumbering": [
@@ -395,7 +395,7 @@
     "skill:Attack": [
       {
         "rank": 1,
-        "text": "🥇3for100Level 81262,202 xp"
+        "text": "🥇3for100Level 82262,474 xp"
       },
       {
         "rank": 2,
@@ -403,11 +403,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 3650,126 xp"
+        "text": "🥉ThomasbLevel 3752,346 xp"
       },
       {
         "rank": 4,
-        "text": "4Pathell3509Level 2524,216 xp"
+        "text": "4Pathell3509Level 2626,452 xp"
       },
       {
         "rank": 5,
@@ -473,7 +473,7 @@
       },
       {
         "rank": 10,
-        "text": "10LmaoLevel 246 xp"
+        "text": "10TutorialLevel 2100 xp"
       }
     ],
     "skill:Defense": [
@@ -483,11 +483,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 75222,297 xp"
+        "text": "🥈KorBlimeyLevel 76227,809 xp"
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 2831,158 xp"
+        "text": "🥉ThomasbLevel 3034,090 xp"
       },
       {
         "rank": 4,
@@ -533,7 +533,7 @@
       },
       {
         "rank": 4,
-        "text": "43for100Level 114,593 xp"
+        "text": "43for100Level 125,409 xp"
       }
     ],
     "skill:Magic": [
@@ -834,19 +834,19 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3958,851 xp"
+        "text": "🥇KorBlimeyLevel 3958,979 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 3138,094 xp"
+        "text": "🥈3for100Level 3138,116 xp"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 3034,662 xp"
+        "text": "🥉Pathell3509Level 3034,787 xp"
       },
       {
         "rank": 4,
-        "text": "4ThomasbLevel 1812,142 xp"
+        "text": "4ThomasbLevel 1812,855 xp"
       }
     ],
     "skill:Homesteading": [
