@@ -1,7 +1,7 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T00:01:47.620Z",
+  "capturedAt": "2026-11-07T00:06:52.505Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
@@ -11,7 +11,7 @@
       },
       {
         "rank": 2,
-        "text": "🥈3for100391total level"
+        "text": "🥈3for100394total level"
       },
       {
         "rank": 3,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb179total level"
+        "text": "5Thomasb180total level"
       },
       {
         "rank": 6,
@@ -35,7 +35,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer72total level"
+        "text": "8Iamdatrainer73total level"
       },
       {
         "rank": 9,
@@ -53,11 +53,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey2,027slain"
+        "text": "🥈KorBlimey2,031slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for100760slain"
+        "text": "🥉3for100781slain"
       },
       {
         "rank": 4,
@@ -77,15 +77,15 @@
       },
       {
         "rank": 8,
-        "text": "8Cerial12slain"
+        "text": "8Iamdatrainer12slain"
       },
       {
         "rank": 9,
-        "text": "9Six9slain"
+        "text": "9Cerial12slain"
       },
       {
         "rank": 10,
-        "text": "10Zombie8slain"
+        "text": "10Six9slain"
       }
     ],
     "Bosses": [
@@ -353,11 +353,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈IamdatrainerLevel 1812,522 xp"
+        "text": "🥈IamdatrainerLevel 1812,954 xp"
       },
       {
         "rank": 3,
-        "text": "🥉CerialLevel 146,796 xp"
+        "text": "🥉CerialLevel 147,066 xp"
       },
       {
         "rank": 4,
@@ -415,19 +415,19 @@
       },
       {
         "rank": 7,
-        "text": "7CerialLevel 4518 xp"
+        "text": "7IamdatrainerLevel 4566 xp"
       },
       {
         "rank": 8,
-        "text": "8SixLevel 4436 xp"
+        "text": "8CerialLevel 4518 xp"
       },
       {
         "rank": 9,
-        "text": "9Dead2masterLevel 4400 xp"
+        "text": "9SixLevel 4436 xp"
       },
       {
         "rank": 10,
-        "text": "10ZombieLevel 4378 xp"
+        "text": "10Dead2masterLevel 4400 xp"
       }
     ],
     "skill:Strength": [
@@ -471,11 +471,11 @@
     "skill:Defense": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3959,477 xp"
+        "text": "🥇KorBlimeyLevel 3960,217 xp"
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 3137,665 xp"
+        "text": "🥈3for100Level 3341,653 xp"
       },
       {
         "rank": 3,
@@ -513,7 +513,7 @@
     "skill:Ranged": [
       {
         "rank": 1,
-        "text": "🥇Pathell3509Level 68184,726 xp"
+        "text": "🥇Pathell3509Level 68184,746 xp"
       },
       {
         "rank": 2,
@@ -681,11 +681,11 @@
       },
       {
         "rank": 7,
-        "text": "7CerialLevel 4417 xp"
+        "text": "7IamdatrainerLevel 4506 xp"
       },
       {
         "rank": 8,
-        "text": "8IamdatrainerLevel 3315 xp"
+        "text": "8CerialLevel 4417 xp"
       },
       {
         "rank": 9,
@@ -830,11 +830,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 2117,393 xp"
+        "text": "🥈KorBlimeyLevel 2117,506 xp"
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 82,413 xp"
+        "text": "🥉3for100Level 92,869 xp"
       },
       {
         "rank": 4,
@@ -897,11 +897,11 @@
     "skill:Glassblowing": [
       {
         "rank": 1,
-        "text": "🥇Dead2masterLevel 280 xp"
+        "text": "🥇ThomasbLevel 3192 xp"
       },
       {
         "rank": 2,
-        "text": "🥈ThomasbLevel 260 xp"
+        "text": "🥈Dead2masterLevel 280 xp"
       },
       {
         "rank": 3,
