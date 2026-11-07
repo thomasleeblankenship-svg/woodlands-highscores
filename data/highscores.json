@@ -1,25 +1,25 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T15:49:59.860Z",
+  "capturedAt": "2026-11-07T15:55:10.258Z",
   "reportedAdventurers": "38",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey805total level"
+        "text": "🥇KorBlimey806total level"
       },
       {
         "rank": 2,
-        "text": "🥈3for100579total level"
+        "text": "🥈3for100581total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509429total level"
+        "text": "🥉Pathell3509430total level"
       },
       {
         "rank": 4,
-        "text": "4Thomasb381total level"
+        "text": "4Thomasb384total level"
       },
       {
         "rank": 5,
@@ -49,19 +49,19 @@
     "Monsters": [
       {
         "rank": 1,
-        "text": "🥇Pathell35097,175slain"
+        "text": "🥇Pathell35097,218slain"
       },
       {
         "rank": 2,
-        "text": "🥈3for1004,023slain"
+        "text": "🥈KorBlimey4,034slain"
       },
       {
         "rank": 3,
-        "text": "🥉KorBlimey4,022slain"
+        "text": "🥉3for1004,023slain"
       },
       {
         "rank": 4,
-        "text": "4Thomasb1,272slain"
+        "text": "4Thomasb1,292slain"
       },
       {
         "rank": 5,
@@ -201,7 +201,7 @@
       },
       {
         "rank": 5,
-        "text": "53for100Level 2728,953 xp"
+        "text": "53for100Level 2932,853 xp"
       },
       {
         "rank": 6,
@@ -403,11 +403,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 3445,098 xp"
+        "text": "🥉ThomasbLevel 3650,126 xp"
       },
       {
         "rank": 4,
-        "text": "4Pathell3509Level 2421,454 xp"
+        "text": "4Pathell3509Level 2524,216 xp"
       },
       {
         "rank": 5,
@@ -483,7 +483,7 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimeyLevel 74216,717 xp"
+        "text": "🥈KorBlimeyLevel 75222,297 xp"
       },
       {
         "rank": 3,
@@ -834,7 +834,7 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3958,683 xp"
+        "text": "🥇KorBlimeyLevel 3958,851 xp"
       },
       {
         "rank": 2,
@@ -842,11 +842,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509Level 3034,531 xp"
+        "text": "🥉Pathell3509Level 3034,662 xp"
       },
       {
         "rank": 4,
-        "text": "4ThomasbLevel 1711,548 xp"
+        "text": "4ThomasbLevel 1812,142 xp"
       }
     ],
     "skill:Homesteading": [
