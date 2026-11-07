@@ -5,7 +5,12 @@
 .stock{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px}.stock td{padding:4px 6px;border-top:1px solid #22344b}.stock td:last-child{text-align:right;color:var(--gold);white-space:nowrap}
 .cat{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding-top:8px!important}
 .mapNav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}.mapNav b{width:100%;font-size:12px;color:var(--muted);margin-top:6px}
-.qcard p{margin:6px 0;color:#cfdcec;font-size:13.5px;line-height:1.55}
+.mapTools{display:grid;gap:10px;margin:0 0 12px}.chip.layer i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 0 1px #0008}
+.chip.layer[aria-pressed="false"]{opacity:.55}.chip.layer[aria-pressed="false"] i{filter:grayscale(1)}
+.findRow{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}.findRow select{min-width:min(100%,320px)}#findInfo{font-size:12.5px;line-height:1.5}
+.zoomBtns{position:absolute;right:14px;bottom:14px;display:flex;flex-direction:column;gap:4px;z-index:2}
+.zoomBtns button{width:34px;height:34px;border-radius:6px;border:1px solid #8a6328;background:linear-gradient(180deg,#efe2c2,#d9c79d);color:#2a1c0e;font:700 18px/1 Georgia,serif;cursor:pointer;box-shadow:0 3px 10px #0007}
+.zoomBtns button:hover{background:#fff3d6}.zoomBtns button:focus-visible{outline:2px solid #d9b25f;outline-offset:1px}.qcard p{margin:6px 0;color:#cfdcec;font-size:13.5px;line-height:1.55}
 .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.tiers ul{margin:4px 0 0;padding-left:18px;font-size:13px;color:#cfdcec}
 @media(max-width:700px){.tiers{grid-template-columns:1fr}}
 </style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,12 +76,49 @@ const VIEWS = {
     return `<section class="panel pad"><div class="mapNav" id="mapNav"><b>Regions</b>${M.regions.map(r => `<button class="chip" data-map="region:${esc(r.id)}">${esc(r.name)}</button>`).join('')}
       <b>Towns</b>${M.towns.map(t => `<button class="chip" data-map="town:${esc(t.name)}">${esc(t.name)}</button>`).join('')}
       <b>Dungeons</b>${M.caves.map(c => `<button class="chip" data-map="cave:${esc(c.id)}">${esc(c.name)}</button>`).join('')}</div>
-      <h2 id="mapTitle"></h2><div class="legend" id="legend">${W.legendHtml()}</div>
-      <div class="mapWrap"><canvas id="map"></canvas><div class="tip" id="tip"></div></div>
-      <p class="muted" style="font-size:12px">Hover a marker for its name and coordinates. Coastlines are drawn as simple circles; buildings, walls, rivers and lakes are at their real positions. Dungeon maps show the actual tile layout with what spawns in each room.</p></section>`;
+      <h2 id="mapTitle"></h2>
+      <div class="mapTools" id="mapTools"><div class="chips" id="layers">${W.LAYERS.map(l => `<button class="chip layer" data-layer="${l.id}" aria-pressed="${mapLayers.has(l.id)}"><i style="background:${l.col}"></i>${esc(l.name)}</button>`).join('')}</div>
+        <div class="findRow"><select class="control" id="find" aria-label="Find a resource"><option value="">🔎 Find a resource or fishing spot…</option>${findOptions()}</select><span class="muted" id="findInfo"></span></div></div>
+      <div class="mapWrap"><canvas id="map"></canvas><div class="tip" id="tip"></div>
+        <div class="zoomBtns" id="zoomBtns"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="home" aria-label="Reset view">⟲</button></div></div>
+      <p class="muted" style="font-size:12px">Scroll or pinch to zoom, drag to move, double-click to reset. Hover anything for its name, level and coordinates. Terrain, coastlines, trees, rocks, herbs, fishing spots and monster spawns are all at their real positions in the game world. Dungeon maps show the actual tile layout with what spawns in each room.</p></section>`;
   },
 };
-let mapKey = null; const lookup = {};
+let mapKey = null, mapFind = '', terrain = [], home = null, cur = null, mapSize = null, isCave = false, rafId = 0;
+const lookup = {}, mapLayers = new Set(W.LAYERS.map(l => l.id));
+// "Find a resource" options: res:<type id> or spot:<method id>, grouped and sorted by level
+function findOptions() {
+  const M = D.map, RES = M.res, SP = M.spots; if (!RES) return '';
+  const count = (pts, i) => pts.reduce((n, p) => n + (p[2] === i), 0);
+  const groups = [['tree', '🌲 Trees'], ['ore', '⛏ Rocks & ores'], ['plant', '🌿 Herbs & plants']].map(([cat, label]) => {
+    const list = RES.types.map((t, i) => ({ t, i })).filter(o => W.resCat(o.t) === cat).sort((a, b) => (a.t.lvl || 0) - (b.t.lvl || 0));
+    return list.length ? `<optgroup label="${label}">${list.map(({ t, i }) => `<option value="res:${esc(t.id)}">${esc(t.name)} · ${esc(t.skill)} ${t.lvl ?? '?'} (${count(RES.pts, i)})</option>`).join('')}</optgroup>` : '';
+  });
+  if (SP && SP.types.length) groups.push(`<optgroup label="🎣 Fishing spots">${SP.types.map((t, i) => ({ t, i })).sort((a, b) => (a.t.lvl || 0) - (b.t.lvl || 0)).map(({ t, i }) => `<option value="spot:${esc(t.id)}">${esc(t.name)} · Fishing ${t.lvl ?? '?'} (${count(SP.pts, i)})</option>`).join('')}</optgroup>`);
+  return groups.join('');
+}
+function focusOf(v) {
+  const M = D.map, [k, id] = (v || '').split(/:(.*)/s);
+  if (k === 'res' && M.res) { const i = M.res.types.findIndex(t => t.id === id); if (i >= 0) return { res: i }; }
+  if (k === 'spot' && M.spots) { const i = M.spots.types.findIndex(t => t.id === id); if (i >= 0) return { spot: i }; }
+  return null;
+}
+function findInfo() {
+  const M = D.map, f = focusOf(mapFind), el = $('findInfo'); if (!el) return;
+  if (!f) { el.textContent = ''; return; }
+  const pts = (f.res != null ? M.res.pts.filter(p => p[2] === f.res) : M.spots.pts.filter(p => p[2] === f.spot));
+  const t = f.res != null ? M.res.types[f.res] : M.spots.types[f.spot];
+  const per = M.regions.map(r => [r.name, pts.filter(([x, z]) => Math.hypot(x - r.c[0], z - r.c[1]) <= r.r + 120).length]).filter(([, n]) => n);
+  const extra = f.res != null ? `${t.skill} ${t.lvl ?? '?'} · gives ${t.item}${t.xp ? ` · ${t.xp} xp` : ''}` : `Fishing ${t.lvl ?? '?'}${t.tool ? ' · needs ' + t.tool : ''}${t.catches.length ? ' · ' + t.catches.join(', ') : ''}`;
+  el.innerHTML = `<b>${pts.length}</b> ${esc(t.name.toLowerCase())} ${f.res != null ? 'node' : 'spot'}${pts.length === 1 ? '' : 's'}${per.length ? ': ' + per.map(([n, c]) => `${esc(n)} ${c}`).join(' · ') : ''}<br>${esc(extra)}`;
+}
+function render() {
+  rafId = 0; if (!cur) return;
+  const cv = $('map');
+  lookup.fn = W.drawMap(cv, D.map, cur, { mobName, terrain, layers: mapLayers, focus: isCave ? null : focusOf(mapFind), size: mapSize });
+  const zb = $('zoomBtns'); zb.style.right = 'auto'; zb.style.left = (cv.offsetLeft + cv.offsetWidth - 50) + 'px'; zb.style.bottom = 'auto'; zb.style.top = (cv.offsetTop + cv.offsetHeight - 132) + 'px';
+}
+const queue = () => { if (!rafId) rafId = requestAnimationFrame(render); };
 function drawMapKey(key) {
   const M = D.map; mapKey = key || 'region:mainland'; const [kind, id] = mapKey.split(/:(.*)/s);
   let view, name;
@@ -84,11 +126,41 @@ function drawMapKey(key) {
   else if (kind === 'town') { const t = M.towns.find(t => t.name === id) || M.towns[0]; const r = Math.max(t.r, 45); view = { x0: t.x - r, x1: t.x + r, z0: t.z - r, z1: t.z + r }; name = t.name; }
   else { const r = M.regions.find(r => r.id === id) || M.regions[1]; view = { x0: r.c[0] - r.r, x1: r.c[0] + r.r, z0: r.c[1] - r.r, z1: r.c[1] + r.r }; name = r.name;
     if (r.id === 'mainland') for (const [x, z, rr] of M.isles) { view.x0 = Math.min(view.x0, x - rr - 10); view.x1 = Math.max(view.x1, x + rr + 10); view.z0 = Math.min(view.z0, z - rr - 10); view.z1 = Math.max(view.z1, z + rr + 10); } }
-  $('mapTitle').textContent = name; $('legend').hidden = kind === 'cave';
+  isCave = kind === 'cave'; home = view; cur = { ...view }; mapSize = null;
+  $('mapTitle').textContent = name; $('mapTools').hidden = isCave; $('zoomBtns').hidden = isCave;
   $('mapNav').querySelectorAll('[data-map]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.map === mapKey)));
-  const draw = () => { lookup.fn = W.drawMap($('map'), M, view, { mobName }); };
-  draw(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (tab === 'maps') draw(); });   // redraw once the medieval fonts arrive
-  W.setHash({ tab: 'maps', map: mapKey });
+  render(); if (!isCave) mapSize = { w: parseFloat($('map').style.width), h: parseFloat($('map').style.height) };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (tab === 'maps') queue(); });   // redraw once the medieval fonts arrive
+  W.setHash({ tab: 'maps', map: mapKey, find: mapFind });
+}
+// zoom and pan (world-space view rectangle `cur` inside the starting view `home`)
+function clampView() {
+  const hw = home.x1 - home.x0, hh = home.z1 - home.z0; let w = cur.x1 - cur.x0;
+  w = Math.max(Math.min(w, hw), Math.min(30, hw)); const h = w * hh / hw;
+  let x0 = Math.min(Math.max(cur.x0, home.x0), home.x1 - w), z0 = Math.min(Math.max(cur.z0, home.z0), home.z1 - h);
+  cur = { x0, x1: x0 + w, z0, z1: z0 + h };
+}
+function zoomAt(mx, my, f) {
+  const P = $('map')._proj; if (!P || isCave) return;
+  const wx = cur.x0 + mx / P.scale, wz = cur.z0 + my / P.scale;
+  cur = { x0: wx - (wx - cur.x0) * f, x1: wx + (cur.x1 - wx) * f, z0: wz - (wz - cur.z0) * f, z1: wz + (cur.z1 - wz) * f };
+  clampView(); queue();
+}
+function attachZoom(cv) {
+  cv.style.touchAction = 'none'; cv.style.cursor = 'grab';
+  const pts = new Map(); let last = null, moved = 0, pinch = 0;
+  const local = e => { const rc = cv.getBoundingClientRect(); return [e.clientX - rc.left, e.clientY - rc.top]; };
+  cv.addEventListener('wheel', e => { if (isCave) return; e.preventDefault(); const [mx, my] = local(e); zoomAt(mx, my, Math.exp(Math.sign(e.deltaY) * 0.18)); }, { passive: false });
+  cv.addEventListener('pointerdown', e => { if (isCave) return; cv.setPointerCapture(e.pointerId); pts.set(e.pointerId, local(e)); last = local(e); moved = 0; pinch = 0; cv.style.cursor = 'grabbing'; });
+  cv.addEventListener('pointermove', e => {
+    if (!pts.has(e.pointerId)) return; const p = local(e); pts.set(e.pointerId, p); const P = cv._proj;
+    if (pts.size === 2) { const [a, b] = [...pts.values()], d = Math.hypot(a[0] - b[0], a[1] - b[1]); if (pinch) zoomAt((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, pinch / d); pinch = d; lookup.dragging = true; return; }
+    const dx = p[0] - last[0], dy = p[1] - last[1]; last = p; moved += Math.abs(dx) + Math.abs(dy);
+    if (moved > 3) { lookup.dragging = true; cur = { x0: cur.x0 - dx / P.scale, x1: cur.x1 - dx / P.scale, z0: cur.z0 - dy / P.scale, z1: cur.z1 - dy / P.scale }; clampView(); queue(); }
+  });
+  const up = e => { pts.delete(e.pointerId); pinch = 0; if (!pts.size) { lookup.dragging = false; cv.style.cursor = 'grab'; } else last = [...pts.values()][0]; };
+  cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+  cv.addEventListener('dblclick', () => { if (home && !isCave) { cur = { ...home }; queue(); } });
 }
 function itemRows() {
   const q = $('iq').value.trim().toLowerCase(), k = $('ik').value;
@@ -102,7 +174,16 @@ function show(t, opts = {}) {
   $('tabs').querySelectorAll('[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
   if (tab !== 'maps') { $('navWiki').setAttribute('aria-current', 'page'); $('navMaps').removeAttribute('aria-current'); } else { $('navMaps').setAttribute('aria-current', 'page'); $('navWiki').removeAttribute('aria-current'); }
   $('main').innerHTML = VIEWS[tab]();
-  if (tab === 'maps') { $('mapNav').addEventListener('click', e => { const b = e.target.closest('[data-map]'); if (b) drawMapKey(b.dataset.map); }); W.attachTip($('map'), $('tip'), lookup); drawMapKey(opts.map); }
+  if (tab === 'maps') {
+    $('mapNav').addEventListener('click', e => { const b = e.target.closest('[data-map]'); if (b) drawMapKey(b.dataset.map); });
+    $('layers').addEventListener('click', e => { const b = e.target.closest('[data-layer]'); if (!b) return; const id = b.dataset.layer; mapLayers.has(id) ? mapLayers.delete(id) : mapLayers.add(id); b.setAttribute('aria-pressed', String(mapLayers.has(id))); queue(); });
+    $('find').addEventListener('change', e => { mapFind = e.target.value; findInfo(); W.setHash({ tab: 'maps', map: mapKey, find: mapFind }); queue(); });
+    $('zoomBtns').addEventListener('click', e => { const b = e.target.closest('[data-z]'); if (!b) return; const cv = $('map'); if (b.dataset.z === 'home') { cur = { ...home }; queue(); } else zoomAt(cv.clientWidth / 2, cv.clientHeight / 2, b.dataset.z === 'in' ? 0.6 : 1 / 0.6); });
+    W.attachTip($('map'), $('tip'), lookup); attachZoom($('map'));
+    mapFind = focusOf(opts.find) ? opts.find : ''; $('find').value = mapFind; findInfo();
+    drawMapKey(opts.map);
+    W.prepTerrain(D.map).then(t => { terrain = t; if (tab === 'maps') queue(); });
+  }
   else if (tab === 'items') { $('iq').addEventListener('input', itemRows); $('ik').addEventListener('change', itemRows); itemRows(); W.setHash({ tab }); }
   else if (tab === 'quests') { $('qq').addEventListener('input', e => { const q = e.target.value.trim().toLowerCase(); document.querySelectorAll('[data-q]').forEach(c => { c.hidden = q && !c.dataset.q.includes(q); }); }); W.setHash({ tab }); }
   else W.setHash({ tab });
