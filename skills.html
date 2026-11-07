@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071320">
+<title>Woodlands Skills Guide</title><link rel="stylesheet" href="wiki.css">
+<style>
+.skillList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:12px}
+.skillBtn{display:flex;align-items:center;gap:8px;text-align:left;background:#0f1f34;border:1px solid #2c4560;border-radius:10px;padding:9px 10px;min-width:0}
+.skillBtn:hover{border-color:#5b8cc0}.skillBtn[aria-current="true"]{background:linear-gradient(180deg,#275b92,#153b6c);border-color:#6dbafb}
+.skillBtn .ic{font-size:18px;flex:0 0 auto}.skillBtn b{font-size:13px;display:block;overflow-wrap:anywhere}.skillBtn small{color:var(--muted);font-size:11px}
+.skillHead{display:flex;gap:16px;align-items:center}.bigIcon{font-size:44px;width:76px;height:76px;display:grid;place-items:center;border-radius:18px;background:#0d1d31;border:1px solid #4775a2;flex:0 0 76px}
+.desc{color:#cfdcec;line-height:1.65;margin:6px 0 0;max-width:820px}
+.top10 li{display:flex;justify-content:space-between;gap:8px}
+.cols{display:grid;grid-template-columns:1fr 300px;gap:16px;align-items:start}
+@media(max-width:1100px){.cols{grid-template-columns:1fr}}
+.sideList{position:sticky;top:10px;max-height:calc(100vh - 20px);overflow:auto}
+@media(max-width:900px){.sideList{position:static;max-height:none}.skillList{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.skillList{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=Cinzel:wght@500;700;900&display=swap">
+<link rel="stylesheet" href="theme.css">
+</head><body>
+<div class="wrap">
+<header class="top"><a class="brand" href="./"><span>✦</span>WOODLANDS</a><nav class="sitenav" aria-label="Site"><a href="./">🏆 Highscores</a><a href="./#players">♟ Players</a><a href="skills.html" aria-current="page">⚔ Skills</a><a href="monsters.html">🐉 Monsters</a><a href="wiki.html">📖 Wiki</a><a href="wiki.html#tab=maps">🗺 Maps</a></nav></header>
+<section class="intro"><div class="eyebrow">✦ Skills guide ✦</div><h1>Skills</h1><p>Every skill in Woodlands with what it does and what unlocks at each level: resources, recipes, gear, spells, prayers, boats and more. Pick a skill on the left.</p></section>
+<div class="grid2">
+  <aside class="panel sideList"><div class="toolbar"><input class="control" id="skillSearch" type="search" placeholder="Find a skill…" aria-label="Find a skill"></div><div class="skillList" id="skillList"></div></aside>
+  <main id="main"><div class="panel pad empty">Loading skills…</div></main>
+</div>
+<p class="foot">Levels, experience and requirements come straight from the game's data. Descriptions are written for this wiki. XP shown is per action unless noted.</p>
+</div>
+<script src="wiki-common.js"></script>
+<script>
+'use strict';
+const { $, esc, fmt } = W;
+let DATA = null, HS = null, cur = null, kindFilter = '', q = '';
+function list() {
+  const f = $('skillSearch').value.trim().toLowerCase();
+  $('skillList').innerHTML = DATA.skills.filter(s => s.name.toLowerCase().includes(f)).map(s => `<button class="skillBtn" data-id="${esc(s.id)}" aria-current="${s.id === cur}"><span class="ic">${s.icon}</span><span><b>${esc(s.name)}</b><small>${s.unlocks.length} unlocks</small></span></button>`).join('');
+}
+function show(id) {
+  const s = DATA.skills.find(x => x.id === id) || DATA.skills[0]; cur = s.id; kindFilter = ''; q = '';
+  W.setHash({ skill: s.id }); list(); render(s);
+}
+function render(s) {
+  const kinds = [...new Set(s.unlocks.map(u => u.kind))];
+  const board = HS && HS.boards && HS.boards['skill:' + s.name];
+  const top = Array.isArray(board) ? board.slice(0, 10).map(r => {
+    const t = String(r.text || '').replace(/^[🥇🥈🥉]\s*/u, '').replace(new RegExp('^' + r.rank + '\\s*'), '');
+    const m = /^(.+?)\s*Level\s+(.+?)\s*xp$/i.exec(t); return `<li><span>#${r.rank} ${esc(m ? m[1] : t)}</span><span class="muted">${m ? 'Lv / XP ' + esc(m[2]) : ''}</span></li>`;
+  }).join('') : '';
+  $('main').innerHTML = `
+  <div class="cols"><div>
+    <section class="panel pad"><div class="skillHead"><div class="bigIcon">${s.icon}</div><div><div class="eyebrow">Skill</div><h2 style="font-size:30px;margin:2px 0">${esc(s.name)}</h2></div></div>
+      <p class="desc">${esc(s.desc)}</p>
+      <div class="facts"><div class="fact"><b>${s.unlocks.length}</b>things to unlock</div>${s.maxUnlock ? `<div class="fact"><b>Level ${s.maxUnlock}</b>last unlock</div>` : ''}${s.guilds.length ? `<div class="fact"><b>${esc(s.guilds.join(', '))}</b>guild</div>` : ''}${s.pet ? `<div class="fact"><b>${esc(s.pet)}</b>skilling pet</div>` : ''}</div>
+    </section>
+    <section class="panel" style="margin-top:16px"><div class="toolbar"><h2 style="margin:0 auto 0 0">Unlocks by level</h2><input class="control" id="uSearch" type="search" placeholder="Search unlocks…" aria-label="Search unlocks" style="max-width:280px"></div>
+      <div class="toolbar"><div class="chips" id="kinds"><button class="chip" data-k="" aria-pressed="true">All</button>${kinds.map(k => `<button class="chip" data-k="${esc(k)}" aria-pressed="false">${esc(k)}</button>`).join('')}</div></div>
+      <div class="tableScroll"><table class="data"><thead><tr><th>Level</th><th>Unlock</th><th>Type</th><th class="num">XP</th><th>Details</th></tr></thead><tbody id="uRows"></tbody></table><div class="empty" id="uEmpty" hidden>No unlocks match.</div></div>
+    </section></div>
+    <aside>
+      ${top ? `<section class="panel pad"><h3 style="margin-top:0">Top 10 · ${esc(s.name)}</h3><ul class="plain top10">${top}</ul><p class="muted" style="font-size:12px;margin:10px 0 0"><a href="./">Full highscores →</a></p></section>` : ''}
+      <section class="panel pad" style="margin-top:16px"><h3 style="margin-top:0">XP needed per level</h3><details><summary>Show XP table (1–${DATA.xpTable.length})</summary><div class="tableScroll" style="max-height:420px"><table class="data"><thead><tr><th>Level</th><th class="num">Total XP</th></tr></thead><tbody>${DATA.xpTable.map(r => `<tr><td class="lv">${r.level}</td><td class="num">${fmt(r.xp)}</td></tr>`).join('')}</tbody></table></div></details><p class="muted" style="font-size:12px">Same curve for every skill.</p></section>
+    </aside></div>`;
+  $('kinds').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (!b) return; kindFilter = b.dataset.k; $('kinds').querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c === b))); rows(s); });
+  $('uSearch').addEventListener('input', e => { q = e.target.value.trim().toLowerCase(); rows(s); });
+  rows(s);
+}
+function rows(s) {
+  const r = s.unlocks.filter(u => (!kindFilter || u.kind === kindFilter) && (!q || (u.what + ' ' + u.detail + ' ' + u.kind).toLowerCase().includes(q)));
+  $('uRows').innerHTML = r.map(u => `<tr><td class="lv">${u.lvl}</td><td><b>${esc(u.what)}</b></td><td><span class="tag">${esc(u.kind)}</span></td><td class="num">${u.xp != null ? fmt(u.xp) : '—'}</td><td class="detail">${esc(u.detail || '')}</td></tr>`).join('');
+  $('uEmpty').hidden = r.length > 0;
+}
+$('skillList').addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) { show(b.dataset.id); if (matchMedia('(max-width:900px)').matches) $('main').scrollIntoView({ behavior: 'smooth' }); } });
+$('skillSearch').addEventListener('input', list);
+Promise.all([W.load(), fetch('./data/highscores.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)])
+  .then(([d, hs]) => { DATA = d; HS = hs; const h = W.hash(); show(h.skill || 'woodcutting'); })
+  .catch(err => { $('main').innerHTML = `<div class="panel pad empty">Could not load the wiki data: ${esc(err.message)}</div>`; });
+</script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="theme-bg.js"></script>
+<script defer src="theme.js"></script>
+</body></html>
