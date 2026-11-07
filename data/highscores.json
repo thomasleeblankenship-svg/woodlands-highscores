@@ -1,7 +1,7 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T00:17:12.070Z",
+  "capturedAt": "2026-11-07T00:22:28.475Z",
   "reportedAdventurers": "35",
   "boards": {
     "Overall": [
@@ -11,11 +11,11 @@
       },
       {
         "rank": 2,
-        "text": "🥈3for100398total level"
+        "text": "🥈3for100400total level"
       },
       {
         "rank": 3,
-        "text": "🥉Pathell3509304total level"
+        "text": "🥉Pathell3509306total level"
       },
       {
         "rank": 4,
@@ -23,7 +23,7 @@
       },
       {
         "rank": 5,
-        "text": "5Thomasb181total level"
+        "text": "5Thomasb182total level"
       },
       {
         "rank": 6,
@@ -35,7 +35,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer76total level"
+        "text": "8Iamdatrainer77total level"
       },
       {
         "rank": 9,
@@ -57,7 +57,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100826slain"
+        "text": "🥉3for100849slain"
       },
       {
         "rank": 4,
@@ -77,7 +77,7 @@
       },
       {
         "rank": 8,
-        "text": "8Iamdatrainer29slain"
+        "text": "8Iamdatrainer38slain"
       },
       {
         "rank": 9,
@@ -159,7 +159,7 @@
       },
       {
         "rank": 6,
-        "text": "6ThomasbLevel 5810 xp"
+        "text": "6ThomasbLevel 5880 xp"
       },
       {
         "rank": 7,
@@ -181,7 +181,7 @@
     "skill:Mining": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 68182,339 xp"
+        "text": "🥇KorBlimeyLevel 68183,369 xp"
       },
       {
         "rank": 2,
@@ -277,7 +277,7 @@
       },
       {
         "rank": 4,
-        "text": "4Pathell3509Level 92,568 xp"
+        "text": "4Pathell3509Level 114,299 xp"
       },
       {
         "rank": 5,
@@ -407,7 +407,7 @@
       },
       {
         "rank": 5,
-        "text": "5IamdatrainerLevel 61,430 xp"
+        "text": "5IamdatrainerLevel 71,870 xp"
       },
       {
         "rank": 6,
@@ -475,7 +475,7 @@
       },
       {
         "rank": 2,
-        "text": "🥈3for100Level 3649,917 xp"
+        "text": "🥈3for100Level 3754,245 xp"
       },
       {
         "rank": 3,
@@ -681,7 +681,7 @@
       },
       {
         "rank": 7,
-        "text": "7IamdatrainerLevel 5730 xp"
+        "text": "7IamdatrainerLevel 5842 xp"
       },
       {
         "rank": 8,
@@ -834,7 +834,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 103,897 xp"
+        "text": "🥉3for100Level 114,401 xp"
       },
       {
         "rank": 4,
@@ -856,7 +856,7 @@
       },
       {
         "rank": 4,
-        "text": "4ThomasbLevel 3246 xp"
+        "text": "4ThomasbLevel 3302 xp"
       },
       {
         "rank": 5,
@@ -897,7 +897,7 @@
     "skill:Glassblowing": [
       {
         "rank": 1,
-        "text": "🥇ThomasbLevel 4588 xp"
+        "text": "🥇ThomasbLevel 5756 xp"
       },
       {
         "rank": 2,
