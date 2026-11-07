@@ -1,13 +1,13 @@
 {
   "schema": "woodlands-highscores-v1",
   "source": "game-leaderboard-dom",
-  "capturedAt": "2026-11-07T13:52:24.861Z",
+  "capturedAt": "2026-11-07T13:57:25.666Z",
   "reportedAdventurers": "36",
   "boards": {
     "Overall": [
       {
         "rank": 1,
-        "text": "🥇KorBlimey782total level"
+        "text": "🥇KorBlimey783total level"
       },
       {
         "rank": 2,
@@ -19,7 +19,7 @@
       },
       {
         "rank": 4,
-        "text": "4Thomasb350total level"
+        "text": "4Thomasb352total level"
       },
       {
         "rank": 5,
@@ -53,15 +53,15 @@
       },
       {
         "rank": 2,
-        "text": "🥈KorBlimey3,749slain"
+        "text": "🥈KorBlimey3,761slain"
       },
       {
         "rank": 3,
-        "text": "🥉3for1003,559slain"
+        "text": "🥉3for1003,582slain"
       },
       {
         "rank": 4,
-        "text": "4Thomasb1,015slain"
+        "text": "4Thomasb1,030slain"
       },
       {
         "rank": 5,
@@ -395,7 +395,7 @@
     "skill:Attack": [
       {
         "rank": 1,
-        "text": "🥇3for100Level 68179,718 xp"
+        "text": "🥇3for100Level 68183,554 xp"
       },
       {
         "rank": 2,
@@ -437,7 +437,7 @@
     "skill:Strength": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 87301,001 xp"
+        "text": "🥇KorBlimeyLevel 88306,413 xp"
       },
       {
         "rank": 2,
@@ -487,7 +487,7 @@
       },
       {
         "rank": 3,
-        "text": "🥉ThomasbLevel 2422,326 xp"
+        "text": "🥉ThomasbLevel 2625,518 xp"
       },
       {
         "rank": 4,
@@ -834,7 +834,7 @@
     "skill:Taming": [
       {
         "rank": 1,
-        "text": "🥇KorBlimeyLevel 3753,400 xp"
+        "text": "🥇KorBlimeyLevel 3753,629 xp"
       },
       {
         "rank": 2,
@@ -842,11 +842,11 @@
       },
       {
         "rank": 3,
-        "text": "🥉3for100Level 2523,936 xp"
+        "text": "🥉3for100Level 2524,624 xp"
       },
       {
         "rank": 4,
-        "text": "4ThomasbLevel 136,241 xp"
+        "text": "4ThomasbLevel 136,460 xp"
       }
     ],
     "skill:Homesteading": [
